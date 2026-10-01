@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Engineering Job Hub</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --surface: #111827;
+      --surface-border: #1f2937;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text-main); min-height: 100vh; }
+    
+    /* Gate Overlay */
+    #gate-screen {
+      position: fixed; inset: 0; background: var(--bg); z-index: 99999;
+      display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px;
+    }
+    .gate-box {
+      background: var(--surface); padding: 32px; border-radius: 12px; border: 1px solid var(--surface-border);
+      text-align: center; width: 340px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+    .gate-box input {
+      width: 100%; padding: 10px 14px; background: #1f2937; border: 1px solid #374151;
+      border-radius: 6px; color: white; margin: 12px 0; font-size: 14px;
+    }
+    .gate-box button {
+      width: 100%; padding: 10px; background: var(--accent); color: white; border: none; border-radius: 6px;
+      font-weight: 600; cursor: pointer;
+    }
+    
+    /* App Layout */
+    .container { max-width: 1380px; margin: 0 auto; padding: 24px 20px; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 1px solid var(--surface-border); padding-bottom: 16px; }
+    header h1 { font-size: 22px; font-weight: 700; }
+    header .status-tag { font-size: 12px; color: var(--text-muted); }
+    
+    /* Hero Banner & Shortcuts */
+    .hero-banner {
+      background: var(--surface); border: 1px solid var(--surface-border); border-radius: 10px; padding: 18px 24px;
+      margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+    }
+    .quick-filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .quick-btn {
+      background: #1f2937; border: 1px solid #374151; color: var(--text-main); font-size: 13px; font-weight: 600;
+      padding: 8px 14px; border-radius: 6px; cursor: pointer; transition: 0.15s;
+    }
+    .quick-btn:hover { background: var(--accent); border-color: var(--accent); }
+    
+    /* Layout Grid */
+    .dashboard-layout { display: grid; grid-template-columns: 310px 1fr; gap: 24px; }
+    
+    /* Filter Sidebar */
+    .filters-sidebar {
+      background: var(--surface); border: 1px solid var(--surface-border); border-radius: 10px; padding: 20px; height: fit-content;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .filter-group { display: flex; flex-direction: column; gap: 8px; }
+    .filter-group label.title { font-size: 12px; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; }
+    .filter-group select, .filter-group input[type="text"] {
+      background: #1f2937; border: 1px solid #374151; color: white; padding: 9px 12px; border-radius: 6px; font-size: 13px; width: 100%;
+    }
+    .checkbox-group { display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
+    .checkbox-group label { display: flex; align-items: center; gap: 8px; cursor: pointer; color: #d1d5db; }
+    
+    /* Listings Area */
+    .listings-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .job-cards { display: flex; flex-direction: column; gap: 14px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--surface-border); border-radius: 10px; padding: 20px;
+      transition: transform 0.1s ease, border-color 0.1s ease;
+    }
+    .card:hover { border-color: #374151; transform: translateY(-1px); }
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+    .card-title { font-size: 16px; font-weight: 700; color: #fff; }
+    .card-company { font-size: 14px; font-weight: 600; color: #60a5fa; margin-bottom: 8px; }
+    .card-meta { display: flex; gap: 14px; font-size: 13px; color: var(--text-muted); margin-bottom: 12px; flex-wrap: wrap; }
+    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tag { font-size: 11px; padding: 3px 8px; background: #1f2937; border-radius: 4px; color: #9ca3af; }
+    .tag-highlight { background: rgba(37, 99, 235, 0.2); color: #93c5fd; border: 1px solid rgba(37, 99, 235, 0.4); }
+    
+    .card-badges { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+    .badge { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
+    .badge-clearance { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+    .badge-h1b { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; }
+    .badge-opt { background: rgba(59, 130, 246, 0.2); color: #93c5fd; }
+    
+    .card-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; border-top: 1px solid var(--surface-border); padding-top: 14px; }
+    .btn {
+      padding: 7px 14px; font-size: 12px; font-weight: 600; border-radius: 6px; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center;
+    }
+    .btn-apply { background: var(--accent); color: white; }
+    .btn-apply:hover { background: var(--accent-hover); }
+    .btn-linkedin { background: #0a66c2; color: white; }
+    .btn-xray { background: #374151; color: white; }
+    .empty-state { text-align: center; padding: 60px 0; color: var(--text-muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <!-- Password Access Gate -->
+  <div id="gate-screen">
+    <div class="gate-box">
+      <h3>Job Search Control Center</h3>
+      <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">Enter your passphrase to access listings</p>
+      <input type="password" id="gate-pass" placeholder="Passphrase" onkeydown="if(event.key==='Enter') unlockGate()">
+      <button onclick="unlockGate()">Unlock Portal</button>
+      <div id="gate-error" style="color: var(--danger); font-size: 12px; margin-top: 8px; display: none;">Invalid Passphrase</div>
+    </div>
+  </div>
+
+  <div class="container" id="main-app" style="display: none;">
+    <header>
+      <h1>Security Engineering Job Hub</h1>
+      <span class="status-tag" id="last-updated">Connecting...</span>
+    </header>
+
+    <!-- Quick Shortcuts -->
+    <div class="hero-banner">
+      <div style="font-size: 13px; font-weight: 600; color: #d1d5db;">Quick Filter Shortcuts:</div>
+      <div class="quick-filters">
+        <button class="quick-btn" onclick="applyQuickFilter('soc')">🛡️ SOC & SecOps</button>
+        <button class="quick-btn" onclick="applyQuickFilter('appsec')">💻 Security Eng & AppSec</button>
+        <button class="quick-btn" onclick="applyQuickFilter('h1b')">🌐 H-1B Sponsors (No Clearance)</button>
+        <button class="quick-btn" onclick="resetFilters()">Reset All</button>
+      </div>
+    </div>
+
+    <div class="dashboard-layout">
+      <!-- Filter Sidebar -->
+      <aside class="filters-sidebar">
+        <!-- 1. Free-Text Keyword Search -->
+        <div class="filter-group">
+          <label class="title">1. Search Keywords</label>
+          <input type="text" id="searchInput" placeholder="Title, company, tag (Splunk, AWS)...">
+        </div>
+
+        <!-- 2. Category & Tech Specialization -->
+        <div class="filter-group">
+          <label class="title">2. Tech Specialization</label>
+          <select id="filterSpecialization">
+            <option value="ALL">All Disciplines</option>
+            <option value="SOC, Detection & SecOps">SOC, Detection & SecOps</option>
+            <option value="Cybersecurity & AppSec">Cybersecurity & AppSec</option>
+            <option value="Software Engineering">Software Engineering</option>
+            <option value="Cloud & DevOps / SRE">Cloud & DevOps / SRE</option>
+            <option value="Data & Machine Learning">Data & Machine Learning</option>
+            <option value="Product & Systems Design">Product & Systems Design</option>
+          </select>
+        </div>
+
+        <!-- 3. Experience Level -->
+        <div class="filter-group">
+          <label class="title">3. Experience Level</label>
+          <select id="filterExperience">
+            <option value="ALL">All Levels</option>
+            <option value="Entry Level / New Grad (0–2 yrs)">Entry Level / New Grad (0–2 yrs)</option>
+            <option value="Mid-Level (3–5 yrs)">Mid-Level (3–5 yrs)</option>
+            <option value="Senior (5+ yrs)">Senior (5+ yrs)</option>
+            <option value="Lead / Staff / Principal">Lead / Staff / Principal</option>
+          </select>
+        </div>
+
+        <!-- 4. Workplace & Geographic Location -->
+        <div class="filter-group">
+          <label class="title">4. Workplace Mode & Region</label>
+          <select id="filterWorkMode" style="margin-bottom: 8px;">
+            <option value="ALL">All Modes (Remote, Hybrid, On-site)</option>
+            <option value="100% Remote">100% Remote</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="On-site">On-site</option>
+          </select>
+          <select id="filterRegion">
+            <option value="ALL">All Tech Hubs</option>
+            <option value="California (SF, Silicon Valley, LA)">California (SF, Silicon Valley, LA)</option>
+            <option value="New York, NY">New York, NY</option>
+            <option value="Seattle / Washington">Seattle / Washington</option>
+            <option value="Austin / Texas">Austin / Texas</option>
+            <option value="Virginia / DC Metro">Virginia / DC Metro</option>
+          </select>
+        </div>
+
+        <!-- 5. Work Authorization & Clearance -->
+        <div class="filter-group">
+          <label class="title">5. Immigration & Clearance</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" id="checkH1b"> H-1B Sponsorship Available</label>
+            <label><input type="checkbox" id="checkOpt"> Accepts OPT / STEM OPT</label>
+            <label><input type="checkbox" id="checkExcludeClearance" checked> Exclude Clearance Required</label>
+          </div>
+        </div>
+
+        <!-- 6. Recency / Date Posted -->
+        <div class="filter-group">
+          <label class="title">6. Date Posted</label>
+          <select id="filterRecency">
+            <option value="ALL">Any Time</option>
+            <option value="1">Past 24 Hours</option>
+            <option value="3">Past 3 Days</option>
+            <option value="7">Past 7 Days</option>
+            <option value="14">Past 14 Days</option>
+            <option value="30">Past 30 Days</option>
+          </select>
+        </div>
+
+        <!-- 7. Sorting Options -->
+        <div class="filter-group">
+          <label class="title">7. Sorting</label>
+          <select id="filterSort">
+            <option value="newest">Posted: Newest First</option>
+            <option value="oldest">Posted: Oldest First</option>
+            <option value="company">Company (A–Z)</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Main Results Display -->
+      <main>
+        <div class="listings-header">
+          <div style="font-size: 14px; color: var(--text-muted);"><span id="match-count" style="font-weight: 700; color: white;">0</span> roles matching criteria</div>
+        </div>
+        <div class="job-cards" id="jobContainer">
+          <div class="empty-state">Loading active roles...</div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // SHA-256 Passphrase Protection (Default passphrase: "cyber-security-2026")
+    // To change: run `echo -n "new-pass" | sha256sum` and update this hash
+    const ACCESS_HASH = "b9bf8e052cf045437894a8c983c1aa0146caecfa30b1ba56a70e7e433f114c6e";
+
+    async function sha256(text) {
+      const buffer = new TextEncoder().encode(text);
+      const hash = await crypto.subtle.digest("SHA-256", buffer);
+      return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    async function unlockGate() {
+      const input = document.getElementById("gate-pass").value;
+      const hash = await sha256(input);
+      if (hash === ACCESS_HASH) {
+        sessionStorage.setItem("site_authenticated", "true");
+        document.getElementById("gate-screen").style.display = "none";
+        document.getElementById("main-app").style.display = "block";
+        loadJobs();
+      } else {
+        document.getElementById("gate-error").style.display = "block";
+      }
+    }
+
+    if (sessionStorage.getItem("site_authenticated") === "true") {
+      document.getElementById("gate-screen").style.display = "none";
+      document.getElementById("main-app").style.display = "block";
+      window.addEventListener("DOMContentLoaded", loadJobs);
+    }
+
+    let rawJobs = [];
+
+    async function loadJobs() {
+      try {
+        const res = await fetch("jobs.json", { cache: "no-store" });
+        rawJobs = await res.json();
+        document.getElementById("last-updated").innerText = `${rawJobs.length} active listings loaded`;
+        render();
+      } catch (err) {
+        document.getElementById("jobContainer").innerHTML = `<div class="empty-state">Could not load jobs.json dataset.</div>`;
+      }
+    }
+
+    function generateRecruiterLinks(company, title) {
+      const cleanComp = company.replace(/[^a-zA-Z0-9 ]/g, '').trim();
+      const domain = title.toLowerCase().includes("security") ? "Security" : "Engineering";
+      const linkedInQuery = `${cleanComp} ${domain} Recruiter`;
+      const linkedInUrl = `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(linkedInQuery)}`;
+      const googleXray = `site:linkedin.com/in/ ("${cleanComp}") AND ("Technical Recruiter" OR "Talent Acquisition" OR "${domain} Engineering Manager")`;
+      const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(googleXray)}`;
+      return { linkedInUrl, googleUrl };
+    }
+
+    function render() {
+      const search = document.getElementById("searchInput").value.toLowerCase().trim();
+      const specialization = document.getElementById("filterSpecialization").value;
+      const experience = document.getElementById("filterExperience").value;
+      const workMode = document.getElementById("filterWorkMode").value;
+      const region = document.getElementById("filterRegion").value;
+      const h1bOnly = document.getElementById("checkH1b").checked;
+      const optOnly = document.getElementById("checkOpt").checked;
+      const excludeClearance = document.getElementById("checkExcludeClearance").checked;
+      const recencyDays = document.getElementById("filterRecency").value;
+      const sortBy = document.getElementById("filterSort").value;
+
+      const now = new Date();
+
+      let filtered = rawJobs.filter(j => {
+        if (specialization !== "ALL" && j.specialization !== specialization) return false;
+        if (experience !== "ALL" && j.experience_level !== experience) return false;
+        if (workMode !== "ALL" && j.work_mode !== workMode) return false;
+        if (region !== "ALL" && j.region !== region) return false;
+        if (h1bOnly && !j.h1b_available) return false;
+        if (optOnly && !j.opt_friendly) return false;
+        if (excludeClearance && j.clearance_required) return false;
+
+        // Recency
+        if (recencyDays !== "ALL") {
+          const postedDate = new Date(j.posted_at);
+          const diffDays = (now - postedDate) / (1000 * 60 * 60 * 24);
+          if (diffDays > parseInt(recencyDays)) return false;
+        }
+
+        // Free-text keyword match
+        if (search) {
+          const matchTitle = j.title.toLowerCase().includes(search);
+          const matchComp = j.company.toLowerCase().includes(search);
+          const matchLoc = j.location.toLowerCase().includes(search);
+          const matchTags = j.tags.some(t => t.toLowerCase().includes(search));
+          const matchDesc = j.description.toLowerCase().includes(search);
+          if (!matchTitle && !matchComp && !matchLoc && !matchTags && !matchDesc) return false;
+        }
+
+        return true;
+      });
+
+      // Sorting
+      if (sortBy === "newest") {
+        filtered.sort((a, b) => new Date(b.posted_at) - new Date(a.posted_at));
+      } else if (sortBy === "oldest") {
+        filtered.sort((a, b) => new Date(a.posted_at) - new Date(b.posted_at));
+      } else if (sortBy === "company") {
+        filtered.sort((a, b) => a.company.localeCompare(b.company));
+      }
+
+      document.getElementById("match-count").innerText = filtered.length;
+      const container = document.getElementById("jobContainer");
+      container.innerHTML = "";
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="empty-state">No listings found matching these filter criteria.</div>`;
+        return;
+      }
+
+      filtered.forEach(j => {
+        const { linkedInUrl, googleUrl } = generateRecruiterLinks(j.company, j.title);
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const tagsHtml = j.tags.map(t => `<span class="tag tag-highlight">${t}</span>`).join("");
+        const postedDateStr = new Date(j.posted_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+
+        card.innerHTML = `
+          <div class="card-top">
+            <div>
+              <div class="card-title">${j.title}</div>
+              <div class="card-company">${j.company}</div>
+            </div>
+            <span style="font-size: 12px; color: var(--text-muted);">${postedDateStr}</span>
+          </div>
+
+          <div class="card-meta">
+            <span>📍 ${j.location}</span>
+            <span>🏢 ${j.work_mode}</span>
+            <span>💼 ${j.experience_level}</span>
+            <span>🏷️ ${j.specialization}</span>
+          </div>
+
+          <div class="card-badges">
+            ${j.h1b_available ? '<span class="badge badge-h1b">✓ H-1B Sponsor</span>' : ''}
+            ${j.opt_friendly ? '<span class="badge badge-opt">✓ OPT / STEM OPT</span>' : ''}
+            ${j.clearance_required ? '<span class="badge badge-clearance">⚠️ Clearance / USC Only</span>' : ''}
+          </div>
+
+          <div class="card-tags">${tagsHtml}</div>
+
+          <div class="card-actions">
+            <a href="${j.url}" target="_blank" class="btn btn-apply">Review & Apply ↗</a>
+            <a href="${linkedInUrl}" target="_blank" class="btn btn-linkedin">LinkedIn Recruiter</a>
+            <a href="${googleUrl}" target="_blank" class="btn btn-xray">Google X-Ray</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Quick Filters
+    function applyQuickFilter(type) {
+      resetFilters(false);
+      if (type === 'soc') {
+        document.getElementById("filterSpecialization").value = "SOC, Detection & SecOps";
+      } else if (type === 'appsec') {
+        document.getElementById("filterSpecialization").value = "Cybersecurity & AppSec";
+      } else if (type === 'h1b') {
+        document.getElementById("checkH1b").checked = true;
+        document.getElementById("checkExcludeClearance").checked = true;
+      }
+      render();
+    }
+
+    function resetFilters(shouldRender = true) {
+      document.getElementById("searchInput").value = "";
+      document.getElementById("filterSpecialization").value = "ALL";
+      document.getElementById("filterExperience").value = "ALL";
+      document.getElementById("filterWorkMode").value = "ALL";
+      document.getElementById("filterRegion").value = "ALL";
+      document.getElementById("checkH1b").checked = false;
+      document.getElementById("checkOpt").checked = false;
+      document.getElementById("checkExcludeClearance").checked = false;
+      document.getElementById("filterRecency").value = "ALL";
+      document.getElementById("filterSort").value = "newest";
+      if (shouldRender) render();
+    }
+
+    // Attach listeners
+    ["searchInput", "filterSpecialization", "filterExperience", "filterWorkMode", "filterRegion", 
+     "checkH1b", "checkOpt", "checkExcludeClearance", "filterRecency", "filterSort"].forEach(id => {
+      document.getElementById(id).addEventListener("input", render);
+      document.getElementById(id).addEventListener("change", render);
+    });
+  </script>
+</body>
+</html>
