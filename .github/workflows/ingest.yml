@@ -10,6 +10,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   harvest:
     runs-on: ubuntu-latest
@@ -24,7 +28,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install -r requirements.txt
+          pip install httpx pydantic
 
       - name: Run Harvester
         run: |
@@ -32,10 +36,11 @@ jobs:
 
       - name: Commit & Push Data
         run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/jobs.json web/jobs.json
-          git diff --staged --quiet || (git commit -m "Auto-update jobs dataset [skip ci]" && git push origin main)
+          git commit -m "Auto-update jobs dataset [skip ci]" || echo "No changes to commit"
+          git push origin main || echo "Nothing to push"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -45,6 +50,13 @@ jobs:
         with:
           path: 'web/'
 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: harvest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
