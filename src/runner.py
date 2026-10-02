@@ -6,6 +6,8 @@ import httpx
 from src.collectors.greenhouse import collect_greenhouse
 from src.collectors.lever import collect_lever
 from src.collectors.ashby import collect_ashby
+from src.collectors.workday import collect_workday
+from src.collectors.enterprise import collect_enterprise
 
 TARGET_KEYWORDS = [
     "security", "infosec", "appsec", "cloud security", "cyber",
@@ -42,6 +44,10 @@ async def main():
                 tasks.append(collect_lever(client, comp, semaphore))
             elif ats == "ashby":
                 tasks.append(collect_ashby(client, comp, semaphore))
+            elif ats == "workday":
+                tasks.append(collect_workday(client, comp, semaphore))
+            elif ats == "enterprise":
+                tasks.append(collect_enterprise(client, comp, semaphore))
 
         batches = await asyncio.gather(*tasks)
         for batch in batches:
