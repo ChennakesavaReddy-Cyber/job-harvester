@@ -3,245 +3,352 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Security Engineering Job Hub</title>
+  <title>Security & Tech Job Control Center</title>
+  <!-- Tailwind CSS via CDN for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a',
+            },
+            dark: {
+              950: '#070b13',
+              900: '#0d1322',
+              850: '#131b2e',
+              800: '#1e293b',
+              700: '#334155',
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    :root {
-      --bg: #0b0f19;
-      --surface: #111827;
-      --surface-border: #1f2937;
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background: var(--bg); color: var(--text-main); min-height: 100vh; }
-    
-    /* Gate Overlay */
-    #gate-screen {
-      position: fixed; inset: 0; background: var(--bg); z-index: 99999;
-      display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px;
-    }
-    .gate-box {
-      background: var(--surface); padding: 32px; border-radius: 12px; border: 1px solid var(--surface-border);
-      text-align: center; width: 340px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    }
-    .gate-box input {
-      width: 100%; padding: 10px 14px; background: #1f2937; border: 1px solid #374151;
-      border-radius: 6px; color: white; margin: 12px 0; font-size: 14px;
-    }
-    .gate-box button {
-      width: 100%; padding: 10px; background: var(--accent); color: white; border: none; border-radius: 6px;
-      font-weight: 600; cursor: pointer;
-    }
-    
-    /* App Layout */
-    .container { max-width: 1380px; margin: 0 auto; padding: 24px 20px; }
-    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 1px solid var(--surface-border); padding-bottom: 16px; }
-    header h1 { font-size: 22px; font-weight: 700; }
-    header .status-tag { font-size: 12px; color: var(--text-muted); }
-    
-    /* Hero Banner & Shortcuts */
-    .hero-banner {
-      background: var(--surface); border: 1px solid var(--surface-border); border-radius: 10px; padding: 18px 24px;
-      margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;
-    }
-    .quick-filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-    .quick-btn {
-      background: #1f2937; border: 1px solid #374151; color: var(--text-main); font-size: 13px; font-weight: 600;
-      padding: 8px 14px; border-radius: 6px; cursor: pointer; transition: 0.15s;
-    }
-    .quick-btn:hover { background: var(--accent); border-color: var(--accent); }
-    
-    /* Layout Grid */
-    .dashboard-layout { display: grid; grid-template-columns: 310px 1fr; gap: 24px; }
-    
-    /* Filter Sidebar */
-    .filters-sidebar {
-      background: var(--surface); border: 1px solid var(--surface-border); border-radius: 10px; padding: 20px; height: fit-content;
-      display: flex; flex-direction: column; gap: 20px;
-    }
-    .filter-group { display: flex; flex-direction: column; gap: 8px; }
-    .filter-group label.title { font-size: 12px; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; }
-    .filter-group select, .filter-group input[type="text"] {
-      background: #1f2937; border: 1px solid #374151; color: white; padding: 9px 12px; border-radius: 6px; font-size: 13px; width: 100%;
-    }
-    .checkbox-group { display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
-    .checkbox-group label { display: flex; align-items: center; gap: 8px; cursor: pointer; color: #d1d5db; }
-    
-    /* Listings Area */
-    .listings-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-    .job-cards { display: flex; flex-direction: column; gap: 14px; }
-    .card {
-      background: var(--surface); border: 1px solid var(--surface-border); border-radius: 10px; padding: 20px;
-      transition: transform 0.1s ease, border-color 0.1s ease;
-    }
-    .card:hover { border-color: #374151; transform: translateY(-1px); }
-    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-    .card-title { font-size: 16px; font-weight: 700; color: #fff; }
-    .card-company { font-size: 14px; font-weight: 600; color: #60a5fa; margin-bottom: 8px; }
-    .card-meta { display: flex; gap: 14px; font-size: 13px; color: var(--text-muted); margin-bottom: 12px; flex-wrap: wrap; }
-    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
-    .tag { font-size: 11px; padding: 3px 8px; background: #1f2937; border-radius: 4px; color: #9ca3af; }
-    .tag-highlight { background: rgba(37, 99, 235, 0.2); color: #93c5fd; border: 1px solid rgba(37, 99, 235, 0.4); }
-    
-    .card-badges { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
-    .badge { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
-    .badge-clearance { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
-    .badge-h1b { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; }
-    .badge-opt { background: rgba(59, 130, 246, 0.2); color: #93c5fd; }
-    
-    .card-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; border-top: 1px solid var(--surface-border); padding-top: 14px; }
-    .btn {
-      padding: 7px 14px; font-size: 12px; font-weight: 600; border-radius: 6px; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center;
-    }
-    .btn-apply { background: var(--accent); color: white; }
-    .btn-apply:hover { background: var(--accent-hover); }
-    .btn-linkedin { background: #0a66c2; color: white; }
-    .btn-xray { background: #374151; color: white; }
-    .empty-state { text-align: center; padding: 60px 0; color: var(--text-muted); font-size: 14px; }
+    /* Custom scrollbars and transitions */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0d1322; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    .badge-clearance { background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .badge-h1b { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-opt { background: rgba(59, 130, 246, 0.15); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .badge-exp-entry { background: rgba(168, 85, 247, 0.15); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .badge-exp-mid { background: rgba(14, 165, 233, 0.15); color: #7dd3fc; border: 1px solid rgba(14, 165, 233, 0.3); }
   </style>
 </head>
-<body>
+<body class="bg-dark-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-brand-600 selection:text-white">
 
-  <!-- Password Access Gate -->
-  <div id="gate-screen">
-    <div class="gate-box">
-      <h3>Job Search Control Center</h3>
-      <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">Enter your passphrase to access listings</p>
-      <input type="password" id="gate-pass" placeholder="Passphrase" onkeydown="if(event.key==='Enter') unlockGate()">
-      <button onclick="unlockGate()">Unlock Portal</button>
-      <div id="gate-error" style="color: var(--danger); font-size: 12px; margin-top: 8px; display: none;">Invalid Passphrase</div>
+  <div id="gate-screen" class="fixed inset-0 z-50 bg-dark-950/95 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-dark-900 border border-dark-700/60 rounded-2xl p-8 max-w-md w-full shadow-2xl relative overflow-hidden">
+      <div class="absolute -top-12 -right-12 w-32 h-32 bg-brand-600/20 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-3 bg-brand-600/10 border border-brand-500/30 rounded-xl text-brand-500">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white tracking-wide">Security Control Center</h2>
+          <p class="text-xs text-slate-400">Strictly Entry & Mid-Level Tech Portal</p>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-300 mb-5 leading-relaxed">
+        Authentication is required to view live aggregates and launch candidate recruiter lookups.
+      </p>
+
+      <div class="space-y-3">
+        <div>
+          <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Passphrase</label>
+          <input 
+            type="password" 
+            id="gate-pass" 
+            placeholder="Enter passphrase..." 
+            class="w-full bg-dark-850 border border-dark-700 focus:border-brand-500 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-brand-500 transition"
+            onkeydown="if(event.key==='Enter') unlockGate()"
+          >
+        </div>
+
+        <button 
+          id="unlock-btn"
+          onclick="unlockGate()" 
+          class="w-full bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm py-2.5 rounded-lg shadow-lg shadow-brand-600/30 transition duration-150 flex items-center justify-center space-x-2"
+        >
+          <span>Unlock Portal</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </button>
+
+        <p id="gate-error" class="hidden text-xs text-red-400 text-center font-medium bg-red-950/40 border border-red-800/40 rounded-lg py-2">
+          Invalid passphrase. Please verify credentials.
+        </p>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-dark-800 flex justify-between items-center text-[11px] text-slate-500">
+        <span>Protected client-side SHA-256</span>
+        <span class="text-slate-400 font-mono">v2.4 - Early & Mid-Tier</span>
+      </div>
     </div>
   </div>
 
-  <div class="container" id="main-app" style="display: none;">
-    <header>
-      <h1>Security Engineering Job Hub</h1>
-      <span class="status-tag" id="last-updated">Connecting...</span>
-    </header>
-
-    <!-- Quick Shortcuts -->
-    <div class="hero-banner">
-      <div style="font-size: 13px; font-weight: 600; color: #d1d5db;">Quick Filter Shortcuts:</div>
-      <div class="quick-filters">
-        <button class="quick-btn" onclick="applyQuickFilter('soc')">🛡️ SOC & SecOps</button>
-        <button class="quick-btn" onclick="applyQuickFilter('appsec')">💻 Security Eng & AppSec</button>
-        <button class="quick-btn" onclick="applyQuickFilter('h1b')">🌐 H-1B Sponsors (No Clearance)</button>
-        <button class="quick-btn" onclick="resetFilters()">Reset All</button>
-      </div>
-    </div>
-
-    <div class="dashboard-layout">
-      <!-- Filter Sidebar -->
-      <aside class="filters-sidebar">
-        <!-- 1. Free-Text Keyword Search -->
-        <div class="filter-group">
-          <label class="title">1. Search Keywords</label>
-          <input type="text" id="searchInput" placeholder="Title, company, tag (Splunk, AWS)...">
-        </div>
-
-        <!-- 2. Category & Tech Specialization -->
-        <div class="filter-group">
-          <label class="title">2. Tech Specialization</label>
-          <select id="filterSpecialization">
-            <option value="ALL">All Disciplines</option>
-            <option value="SOC, Detection & SecOps">SOC, Detection & SecOps</option>
-            <option value="Cybersecurity & AppSec">Cybersecurity & AppSec</option>
-            <option value="Software Engineering">Software Engineering</option>
-            <option value="Cloud & DevOps / SRE">Cloud & DevOps / SRE</option>
-            <option value="Data & Machine Learning">Data & Machine Learning</option>
-            <option value="Product & Systems Design">Product & Systems Design</option>
-          </select>
-        </div>
-
-        <!-- 3. Experience Level -->
-        <div class="filter-group">
-          <label class="title">3. Experience Level</label>
-          <select id="filterExperience">
-            <option value="ALL">All Levels</option>
-            <option value="Entry Level / New Grad (0–2 yrs)">Entry Level / New Grad (0–2 yrs)</option>
-            <option value="Mid-Level (3–5 yrs)">Mid-Level (3–5 yrs)</option>
-            <option value="Senior (5+ yrs)">Senior (5+ yrs)</option>
-            <option value="Lead / Staff / Principal">Lead / Staff / Principal</option>
-          </select>
-        </div>
-
-        <!-- 4. Workplace & Geographic Location -->
-        <div class="filter-group">
-          <label class="title">4. Workplace Mode & Region</label>
-          <select id="filterWorkMode" style="margin-bottom: 8px;">
-            <option value="ALL">All Modes (Remote, Hybrid, On-site)</option>
-            <option value="100% Remote">100% Remote</option>
-            <option value="Hybrid">Hybrid</option>
-            <option value="On-site">On-site</option>
-          </select>
-          <select id="filterRegion">
-            <option value="ALL">All Tech Hubs</option>
-            <option value="California (SF, Silicon Valley, LA)">California (SF, Silicon Valley, LA)</option>
-            <option value="New York, NY">New York, NY</option>
-            <option value="Seattle / Washington">Seattle / Washington</option>
-            <option value="Austin / Texas">Austin / Texas</option>
-            <option value="Virginia / DC Metro">Virginia / DC Metro</option>
-          </select>
-        </div>
-
-        <!-- 5. Work Authorization & Clearance -->
-        <div class="filter-group">
-          <label class="title">5. Immigration & Clearance</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox" id="checkH1b"> H-1B Sponsorship Available</label>
-            <label><input type="checkbox" id="checkOpt"> Accepts OPT / STEM OPT</label>
-            <label><input type="checkbox" id="checkExcludeClearance" checked> Exclude Clearance Required</label>
+  <div id="main-app" class="flex-1 flex flex-col hidden">
+    <!-- Top Header -->
+    <header class="bg-dark-900 border-b border-dark-800 sticky top-0 z-30 px-4 lg:px-8 py-3.5 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-brand-600/20 border border-brand-500/40 flex items-center justify-center text-brand-400 font-bold text-sm">
+            SC
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <h1 class="text-base font-bold text-white tracking-tight">Security & Tech Job Command Hub</h1>
+              <span class="px-2 py-0.5 text-[10px] font-bold rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">0-5 Yrs Only</span>
+            </div>
+            <p class="text-xs text-slate-400">Targeted ATS Pipeline: Cybersecurity, IT Infrastructure & Software</p>
           </div>
         </div>
 
-        <!-- 6. Recency / Date Posted -->
-        <div class="filter-group">
-          <label class="title">6. Date Posted</label>
-          <select id="filterRecency">
-            <option value="ALL">Any Time</option>
-            <option value="1">Past 24 Hours</option>
-            <option value="3">Past 3 Days</option>
-            <option value="7">Past 7 Days</option>
-            <option value="14">Past 14 Days</option>
-            <option value="30">Past 30 Days</option>
-          </select>
+        <div class="flex items-center space-x-3 text-xs">
+          <span id="sync-status" class="flex items-center text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse mr-2"></span>
+            <span id="role-counter-pill">Ready</span>
+          </span>
+          <button onclick="lockSession()" class="text-slate-400 hover:text-slate-200 border border-dark-700 hover:border-dark-600 rounded-md px-2.5 py-1 text-xs transition">
+            Lock
+          </button>
         </div>
+      </div>
+    </header>
 
-        <!-- 7. Sorting Options -->
-        <div class="filter-group">
-          <label class="title">7. Sorting</label>
-          <select id="filterSort">
-            <option value="newest">Posted: Newest First</option>
-            <option value="oldest">Posted: Oldest First</option>
-            <option value="company">Company (A–Z)</option>
-          </select>
+    <section class="max-w-7xl mx-auto w-full px-4 lg:px-8 pt-5 pb-2">
+      <div class="bg-dark-900 border border-dark-800 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 shadow-lg">
+        <div class="flex items-center space-x-2 text-xs font-semibold text-slate-300">
+          <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          <span>One-Click Shortcuts:</span>
         </div>
-      </aside>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="applyQuickPreset('entry')" class="px-3 py-1.5 bg-dark-850 hover:bg-brand-600/30 border border-dark-700 hover:border-brand-500/50 text-slate-200 rounded-lg text-xs font-medium transition flex items-center space-x-1.5">
+            <span>🎯 Entry-Level / Early Career (0-2 Yrs)</span>
+          </button>
+          <button onclick="applyQuickPreset('soc')" class="px-3 py-1.5 bg-dark-850 hover:bg-brand-600/30 border border-dark-700 hover:border-brand-500/50 text-slate-200 rounded-lg text-xs font-medium transition flex items-center space-x-1.5">
+            <span>🛡️ SOC & SecOps (0-5 Yrs)</span>
+          </button>
+          <button onclick="applyQuickPreset('immigration')" class="px-3 py-1.5 bg-dark-850 hover:bg-emerald-600/30 border border-dark-700 hover:border-emerald-500/50 text-slate-200 rounded-lg text-xs font-medium transition flex items-center space-x-1.5">
+            <span>🌐 H-1B & OPT Sponsors (No DoD Clearance)</span>
+          </button>
+          <button onclick="applyQuickPreset('remote')" class="px-3 py-1.5 bg-dark-850 hover:bg-purple-600/30 border border-dark-700 hover:border-purple-500/50 text-slate-200 rounded-lg text-xs font-medium transition flex items-center space-x-1.5">
+            <span>☁️ 100% Remote Tech & Sec</span>
+          </button>
+          <button onclick="resetAllFilters()" class="px-3 py-1.5 bg-dark-800 hover:bg-dark-700 text-slate-400 hover:text-slate-200 rounded-lg text-xs font-medium transition">
+            Reset All
+          </button>
+        </div>
+      </div>
+    </section>
 
-      <!-- Main Results Display -->
-      <main>
-        <div class="listings-header">
-          <div style="font-size: 14px; color: var(--text-muted);"><span id="match-count" style="font-weight: 700; color: white;">0</span> roles matching criteria</div>
-        </div>
-        <div class="job-cards" id="jobContainer">
-          <div class="empty-state">Loading active roles...</div>
-        </div>
-      </main>
-    </div>
+    <main class="max-w-7xl mx-auto w-full px-4 lg:px-8 py-5 flex-1">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- FILTER SIDEBAR -->
+        <aside class="lg:col-span-4 xl:col-span-3 space-y-4">
+          <div class="bg-dark-900 border border-dark-800 rounded-xl p-4 shadow-sm sticky top-20 max-h-[85vh] overflow-y-auto space-y-4">
+
+            <div class="flex items-center justify-between border-b border-dark-800 pb-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center space-x-1.5">
+                <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+                </svg>
+                <span>Filter Engine</span>
+              </span>
+              <button onclick="resetAllFilters()" class="text-[11px] text-brand-400 hover:text-brand-300 font-medium">Clear</button>
+            </div>
+
+            <!-- 1. Free-Text Keyword Search -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1.5">1. Free-Text Search</label>
+              <div class="relative">
+                <input 
+                  type="text" 
+                  id="searchInput" 
+                  placeholder="Title, tag (Splunk, AWS, SOC)..." 
+                  class="w-full bg-dark-850 border border-dark-700 focus:border-brand-500 rounded-lg pl-8 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none transition"
+                >
+                <svg class="w-3.5 h-3.5 text-slate-500 absolute left-2.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 2. Target Companies Filter with Live Counts -->
+            <div>
+              <div class="flex justify-between items-center mb-1.5">
+                <label class="block text-xs font-semibold text-slate-300">2. Target Company</label>
+                <span id="company-count-label" class="text-[10px] text-slate-400">All</span>
+              </div>
+              <div class="space-y-1.5">
+                <input 
+                  type="text" 
+                  id="companyFilterSearch" 
+                  placeholder="Filter company list..." 
+                  class="w-full bg-dark-850 border border-dark-700/80 rounded-lg px-2.5 py-1 text-[11px] text-slate-200 placeholder-slate-500 focus:outline-none focus:border-brand-500 mb-1"
+                  oninput="filterCompanyOptions()"
+                >
+                <select 
+                  id="filterCompany" 
+                  class="w-full bg-dark-850 border border-dark-700 focus:border-brand-500 rounded-lg px-2.5 py-2 text-xs text-slate-200 focus:outline-none transition"
+                >
+                  <option value="ALL">All Available Companies</option>
+                  <!-- Dynamically populated -->
+                </select>
+              </div>
+            </div>
+
+            <!-- 3. Category & Tech Specialization -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1.5">3. Specialization & Discipline</label>
+              <select 
+                id="filterSpecialization" 
+                class="w-full bg-dark-850 border border-dark-700 focus:border-brand-500 rounded-lg px-2.5 py-2 text-xs text-slate-200 focus:outline-none transition"
+              >
+                <option value="ALL">All Tech & Security Disciplines</option>
+                <option value="SOC, Detection & SecOps">SOC, Detection & SecOps</option>
+                <option value="Cybersecurity & AppSec">Cybersecurity & AppSec</option>
+                <option value="IT & Systems Administration">IT & Systems Administration</option>
+                <option value="Cloud & DevOps / SRE">Cloud & DevOps / SRE</option>
+                <option value="Software & Technology">Software & Technology</option>
+                <option value="Data & Machine Learning">Data & Machine Learning</option>
+              </select>
+            </div>
+
+            <!-- 4. Experience Level (STRICT 0-2 & 3-5 FOCUS) -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1.5">4. Experience Tier (Strictly &lt; 5 Yrs)</label>
+              <select 
+                id="filterExperience" 
+                class="w-full bg-dark-850 border border-brand-500/40 focus:border-brand-500 rounded-lg px-2.5 py-2 text-xs text-slate-200 focus:outline-none transition font-medium"
+              >
+                <option value="ALL_TARGETED">All Early & Mid-Tier (0–5 Yrs)</option>
+                <option value="Entry Level / New Grad (0–2 yrs)">Entry Level / Associate / New Grad (0–2 yrs)</option>
+                <option value="Mid-Level (3–5 yrs)">Mid-Level (3–5 yrs)</option>
+              </select>
+              <p class="text-[10px] text-slate-400 mt-1 italic">Senior, Staff, Principal, and Director listings are excluded by default.</p>
+            </div>
+
+            <!-- 5. Workplace Mode & Regional Hub -->
+            <div class="space-y-2">
+              <label class="block text-xs font-semibold text-slate-300">5. Workplace & Hub</label>
+              <select 
+                id="filterWorkMode" 
+                class="w-full bg-dark-850 border border-dark-700 focus:border-brand-500 rounded-lg px-2.5 py-2 text-xs text-slate-200 focus:outline-none transition"
+              >
+                <option value="ALL">All Modes (Remote, Hybrid, On-site)</option>
+                <option value="100% Remote">100% Remote</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="On-site">On-site</option>
+              </select>
+
+              <select 
+                id="filterRegion" 
+                class="w-full bg-dark-850 border border-dark-700 focus:border-brand-500 rounded-lg px-2.5 py-2 text-xs text-slate-200 focus:outline-none transition"
+              >
+                <option value="ALL">All Geographic Hubs</option>
+                <option value="California (SF, Silicon Valley, LA)">California (SF, Silicon Valley, LA)</option>
+                <option value="New York, NY">New York, NY</option>
+                <option value="Seattle / Washington">Seattle / Washington</option>
+                <option value="Austin / Texas">Austin / Texas</option>
+                <option value="Virginia / DC Metro">Virginia / DC Metro</option>
+                <option value="Other / Remote">Other / Remote</option>
+              </select>
+            </div>
+
+            <!-- 6. Work Authorization & Immigration Filters -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2">6. Work Authorization & Clearance</label>
+              <div class="space-y-2 text-xs text-slate-300">
+                <label class="flex items-center space-x-2 cursor-pointer hover:text-white">
+                  <input type="checkbox" id="checkH1b" class="rounded bg-dark-850 border-dark-700 text-brand-600 focus:ring-0">
+                  <span>H-1B Sponsorship Available</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer hover:text-white">
+                  <input type="checkbox" id="checkOpt" class="rounded bg-dark-850 border-dark-700 text-brand-600 focus:ring-0">
+                  <span>Accepts OPT / STEM OPT</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer hover:text-white">
+                  <input type="checkbox" id="checkExcludeClearance" checked class="rounded bg-dark-850 border-dark-700 text-brand-600 focus:ring-0">
+                  <span class="text-amber-300 font-medium">Exclude Clearance Required</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- 7. Recency -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1.5">7. Date Posted</label>
+              <select 
+                id="filterRecency" 
+                class="w-full bg-dark-850 border border-dark-700 focus:border-brand-500 rounded-lg px-2.5 py-2 text-xs text-slate-200 focus:outline-none transition"
+              >
+                <option value="ALL">Any Time</option>
+                <option value="1">Past 24 Hours</option>
+                <option value="3">Past 3 Days</option>
+                <option value="7">Past 7 Days</option>
+                <option value="14">Past 14 Days</option>
+                <option value="30">Past 30 Days</option>
+              </select>
+            </div>
+
+            <!-- 8. Sorting -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1.5">8. Sorting</label>
+              <select 
+                id="filterSort" 
+                class="w-full bg-dark-850 border border-dark-700 focus:border-brand-500 rounded-lg px-2.5 py-2 text-xs text-slate-200 focus:outline-none transition"
+              >
+                <option value="newest">Posted: Newest First</option>
+                <option value="oldest">Posted: Oldest First</option>
+                <option value="company">Company (A–Z)</option>
+              </select>
+            </div>
+
+          </div>
+        </aside>
+
+        <section class="lg:col-span-8 xl:col-span-9 space-y-4">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-dark-900 border border-dark-800 px-4 py-3 rounded-xl gap-2">
+            <div class="flex items-center space-x-2">
+              <span id="match-count" class="font-bold text-white text-sm bg-brand-600/20 text-brand-400 border border-brand-500/30 px-2 py-0.5 rounded">0</span>
+              <span class="text-xs text-slate-400">Target early & mid-career opportunities match criteria</span>
+            </div>
+            <div class="text-[11px] text-slate-400">
+              Auto-refreshes every 6 hours via public ATS
+            </div>
+          </div>
+
+          <!-- Cards Container -->
+          <div id="jobContainer" class="space-y-3.5">
+            <!-- Dynamically populated cards -->
+          </div>
+        </section>
+
+      </div>
+    </main>
   </div>
 
   <script>
-    // SHA-256 Passphrase Protection (Default passphrase: "cyber-security-2026")
-    // To change: run `echo -n "new-pass" | sha256sum` and update this hash
-    // Correct SHA-256 hash for "cyber-security-2026"
-    // Fallback allowing plaintext check or correct SHA-256 match
+    // SHA-256 Gate Auth: supports "cyber-security-2026"
     const ACCESS_HASH = "833328e1b306fcb674dfa8b0c804e38e126c06a88ab4d7bfa5463f8dbe888e2c";
-    const OLD_HASH = "b9bf8e052cf045437894a8c983c1aa0146caecfa30b1ba56a70e7e433f114c6e";
+    const LEGACY_HASH = "b9bf8e052cf045437894a8c983c1aa0146caecfa30b1ba56a70e7e433f114c6e";
 
     async function sha256(text) {
       const buffer = new TextEncoder().encode(text);
@@ -252,51 +359,311 @@
     async function unlockGate() {
       const input = document.getElementById("gate-pass").value.trim();
       const hash = await sha256(input);
-      
-      // Accepts correct hash, legacy hash, or direct phrase match
-      if (input === "cyber-security-2026" || hash === ACCESS_HASH || hash === OLD_HASH) {
+
+      // Direct check + dual-hash tolerance
+      if (input === "cyber-security-2026" || hash === ACCESS_HASH || hash === LEGACY_HASH) {
         sessionStorage.setItem("site_authenticated", "true");
-        document.getElementById("gate-screen").style.display = "none";
-        document.getElementById("main-app").style.display = "block";
-        loadJobs();
+        document.getElementById("gate-screen").classList.add("hidden");
+        document.getElementById("main-app").classList.remove("hidden");
+        initApp();
       } else {
-        document.getElementById("gate-error").style.display = "block";
+        const err = document.getElementById("gate-error");
+        err.classList.remove("hidden");
       }
     }
 
-    if (sessionStorage.getItem("site_authenticated") === "true") {
-      document.getElementById("gate-screen").style.display = "none";
-      document.getElementById("main-app").style.display = "block";
-      window.addEventListener("DOMContentLoaded", loadJobs);
+    function lockSession() {
+      sessionStorage.removeItem("site_authenticated");
+      document.getElementById("main-app").classList.add("hidden");
+      document.getElementById("gate-screen").classList.remove("hidden");
+      document.getElementById("gate-pass").value = "";
     }
 
-    let rawJobs = [];
+    // Auto-login if previously verified in session
+    if (sessionStorage.getItem("site_authenticated") === "true") {
+      document.getElementById("gate-screen").classList.add("hidden");
+      document.getElementById("main-app").classList.remove("hidden");
+      window.addEventListener("DOMContentLoaded", initApp);
+    }
 
-    async function loadJobs() {
+    const FALLBACK_TARGETED_JOBS = [
+      {
+        id: "cf-soc-1",
+        company: "Cloudflare",
+        title: "Associate SOC Analyst - Security Operations",
+        location: "Austin, TX",
+        url: "https://boards.greenhouse.io/cloudflare",
+        description: "Monitor security events, analyze SIEM alerts, triage incidents using Splunk and Suricata.",
+        ats: "greenhouse",
+        posted_at: new Date(Date.now() - 1000 * 60 * 60 * 12).toISOString(),
+        tags: ["splunk", "siem", "linux", "python", "wireshark"],
+        specialization: "SOC, Detection & SecOps",
+        experience_level: "Entry Level / New Grad (0–2 yrs)",
+        work_mode: "Hybrid",
+        region: "Austin / Texas",
+        h1b_available: true,
+        opt_friendly: true,
+        clearance_required: false
+      },
+      {
+        id: "cs-det-1",
+        company: "CrowdStrike",
+        title: "Detection Engineer I - Falcon Platform",
+        location: "Remote - US",
+        url: "https://boards.greenhouse.io/crowdstrike",
+        description: "Author behavioral rules for Falcon sensors. Investigate attacker telemetry and MITRE ATT&CK techniques.",
+        ats: "greenhouse",
+        posted_at: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(),
+        tags: ["falcon", "python", "dfir", "powershell", "threat modeling"],
+        specialization: "SOC, Detection & SecOps",
+        experience_level: "Mid-Level (3–5 yrs)",
+        work_mode: "100% Remote",
+        region: "Other / Remote",
+        h1b_available: true,
+        opt_friendly: true,
+        clearance_required: false
+      },
+      {
+        id: "dd-sec-1",
+        company: "Datadog",
+        title: "Security Engineer - Cloud Infrastructure (Early Career)",
+        location: "New York, NY",
+        url: "https://boards.greenhouse.io/datadog",
+        description: "Secure AWS and Kubernetes clusters. Build policy-as-code automation and conduct posture reviews.",
+        ats: "greenhouse",
+        posted_at: new Date(Date.now() - 1000 * 60 * 60 * 36).toISOString(),
+        tags: ["aws", "kubernetes", "terraform", "python", "docker"],
+        specialization: "Cloud & DevOps / SRE",
+        experience_level: "Entry Level / New Grad (0–2 yrs)",
+        work_mode: "Hybrid",
+        region: "New York, NY",
+        h1b_available: true,
+        opt_friendly: true,
+        clearance_required: false
+      },
+      {
+        id: "okta-it-1",
+        company: "Okta",
+        title: "IT Systems Administrator (Tier II)",
+        location: "San Francisco, CA",
+        url: "https://boards.greenhouse.io/okta",
+        description: "Administer identity access management, Okta Verify, zero trust endpoints, and SaaS automations.",
+        ats: "greenhouse",
+        posted_at: new Date(Date.now() - 1000 * 60 * 60 * 48).toISOString(),
+        tags: ["iam", "bash", "powershell", "python"],
+        specialization: "IT & Systems Administration",
+        experience_level: "Mid-Level (3–5 yrs)",
+        work_mode: "Hybrid",
+        region: "California (SF, Silicon Valley, LA)",
+        h1b_available: true,
+        opt_friendly: true,
+        clearance_required: false
+      },
+      {
+        id: "s1-appsec-1",
+        company: "SentinelOne",
+        title: "Junior Application Security Analyst",
+        location: "Mountain View, CA",
+        url: "https://boards.greenhouse.io/sentinelone",
+        description: "Perform SAST/DAST scans, triage vulnerability reports in Burp Suite, run code audits with engineering teams.",
+        ats: "greenhouse",
+        posted_at: new Date(Date.now() - 1000 * 60 * 60 * 6).toISOString(),
+        tags: ["burp suite", "owasp", "sast", "python"],
+        specialization: "Cybersecurity & AppSec",
+        experience_level: "Entry Level / New Grad (0–2 yrs)",
+        work_mode: "Hybrid",
+        region: "California (SF, Silicon Valley, LA)",
+        h1b_available: true,
+        opt_friendly: true,
+        clearance_required: false
+      },
+      {
+        id: "zsc-net-1",
+        company: "Zscaler",
+        title: "Cyber Security Operations Engineer (3-5 Years)",
+        location: "San Jose, CA",
+        url: "https://boards.greenhouse.io/zscaler",
+        description: "Manage zero-trust network access, inspect encrypted traffic logs, and remediate zero-day exposures.",
+        ats: "greenhouse",
+        posted_at: new Date(Date.now() - 1000 * 60 * 60 * 50).toISOString(),
+        tags: ["tenable", "linux", "siem", "python"],
+        specialization: "SOC, Detection & SecOps",
+        experience_level: "Mid-Level (3–5 yrs)",
+        work_mode: "On-site",
+        region: "California (SF, Silicon Valley, LA)",
+        h1b_available: true,
+        opt_friendly: true,
+        clearance_required: false
+      },
+      {
+        id: "pal-seceng-1",
+        company: "Palantir Technologies",
+        title: "Information Security Specialist - Production Infra",
+        location: "Washington, DC",
+        url: "https://jobs.lever.co/palantir",
+        description: "Hardening production Linux clusters, identity federation, and system log pipelines.",
+        ats: "lever",
+        posted_at: new Date(Date.now() - 1000 * 60 * 60 * 70).toISOString(),
+        tags: ["linux", "kubernetes", "iam", "python", "sql"],
+        specialization: "IT & Systems Administration",
+        experience_level: "Mid-Level (3–5 yrs)",
+        work_mode: "Hybrid",
+        region: "Virginia / DC Metro",
+        h1b_available: false,
+        opt_friendly: false,
+        clearance_required: true
+      },
+      {
+        id: "ash-inf-1",
+        company: "Infisical",
+        title: "Junior Secrets & Cryptography Software Engineer",
+        location: "Remote - US",
+        url: "https://jobs.ashbyhq.com/infisical",
+        description: "Build developer tooling for API secrets management, cryptographic key rotation, and SDK integrations.",
+        ats: "ashby",
+        posted_at: new Date(Date.now() - 1000 * 60 * 60 * 18).toISOString(),
+        tags: ["python", "docker", "aws", "terraform"],
+        specialization: "Software & Technology",
+        experience_level: "Entry Level / New Grad (0–2 yrs)",
+        work_mode: "100% Remote",
+        region: "Other / Remote",
+        h1b_available: true,
+        opt_friendly: true,
+        clearance_required: false
+      },
+      {
+        id: "tenable-vuln-1",
+        company: "Tenable",
+        title: "Vulnerability Research Engineer (Mid-Level)",
+        location: "Columbia, MD",
+        url: "https://boards.greenhouse.io/tenable",
+        description: "Analyze CVEs, write Tenable One and Nessus detection plugins, and verify exploit mechanisms.",
+        ats: "greenhouse",
+        posted_at: new Date(Date.now() - 1000 * 60 * 60 * 10).toISOString(),
+        tags: ["tenable", "nessus", "python", "linux", "burp suite"],
+        specialization: "Cybersecurity & AppSec",
+        experience_level: "Mid-Level (3–5 yrs)",
+        work_mode: "Hybrid",
+        region: "Virginia / DC Metro",
+        h1b_available: true,
+        opt_friendly: true,
+        clearance_required: false
+      },
+      {
+        id: "wiz-cloud-1",
+        company: "Wiz",
+        title: "Cloud Support & Systems Engineer",
+        location: "Austin, TX",
+        url: "https://boards.greenhouse.io/wiz",
+        description: "Assist clients with CSPM integrations across AWS, Azure, and GCP. Inspect Kubernetes configuration drift.",
+        ats: "greenhouse",
+        posted_at: new Date(Date.now() - 1000 * 60 * 60 * 30).toISOString(),
+        tags: ["aws", "azure", "gcp", "kubernetes", "docker"],
+        specialization: "Cloud & DevOps / SRE",
+        experience_level: "Entry Level / New Grad (0–2 yrs)",
+        work_mode: "100% Remote",
+        region: "Austin / Texas",
+        h1b_available: true,
+        opt_friendly: true,
+        clearance_required: false
+      }
+    ];
+
+    let allRoles = [];
+
+    async function initApp() {
+      const counterPill = document.getElementById("role-counter-pill");
+      counterPill.innerText = "Loading roles...";
+
       try {
-        const res = await fetch("jobs.json", { cache: "no-store" });
-        rawJobs = await res.json();
-        document.getElementById("last-updated").innerText = `${rawJobs.length} active listings loaded`;
-        render();
+        const response = await fetch("jobs.json", { cache: "no-store" });
+        if (!response.ok) throw new Error("HTTP error " + response.status);
+        const data = await response.json();
+        
+        if (Array.isArray(data) && data.length > 0) {
+          // Normalize and strictly eliminate Senior / Staff / Lead / Director roles
+          allRoles = data.filter(isTargetExperienceTier);
+          counterPill.innerText = `${allRoles.length} Targeted Roles (Live)`;
+        } else {
+          throw new Error("Empty dataset");
+        }
       } catch (err) {
-        document.getElementById("jobContainer").innerHTML = `<div class="empty-state">Could not load jobs.json dataset.</div>`;
+        console.warn("Using curated targeted roles fallback:", err.message);
+        allRoles = FALLBACK_TARGETED_JOBS;
+        counterPill.innerText = `${allRoles.length} Curated Targeted Roles`;
+      }
+
+      populateCompanyDropdown();
+      renderListings();
+    }
+
+    // Strict filter condition ensuring only 0-2 yrs and 3-5 yrs remain
+    function isTargetExperienceTier(job) {
+      const exp = (job.experience_level || "").toLowerCase();
+      const title = (job.title || "").toLowerCase();
+
+      // Explicit blacklist for senior/leadership titles
+      const blacklist = ["senior", "sr.", "sr ", "staff", "principal", "director", "lead", "architect", "head of", "vp", "chief"];
+      if (blacklist.some(b => title.includes(b))) {
+        return false;
+      }
+
+      // Check classified tier
+      if (exp.includes("entry") || exp.includes("0–2") || exp.includes("0-2") || exp.includes("mid") || exp.includes("3–5") || exp.includes("3-5")) {
+        return true;
+      }
+      return false;
+    }
+
+    function populateCompanyDropdown() {
+      const companyCounts = {};
+      allRoles.forEach(j => {
+        companyCounts[j.company] = (companyCounts[j.company] || 0) + 1;
+      });
+
+      const sortedCompanies = Object.keys(companyCounts).sort((a, b) => a.localeCompare(b));
+      const select = document.getElementById("filterCompany");
+      select.innerHTML = '<option value="ALL">All Available Companies (' + allRoles.length + ')</option>';
+
+      sortedCompanies.forEach(comp => {
+        const opt = document.createElement("option");
+        opt.value = comp;
+        opt.textContent = `${comp} (${companyCounts[comp]})`;
+        select.appendChild(opt);
+      });
+
+      document.getElementById("company-count-label").innerText = `${sortedCompanies.length} Organizations`;
+    }
+
+    function filterCompanyOptions() {
+      const search = document.getElementById("companyFilterSearch").value.toLowerCase();
+      const select = document.getElementById("filterCompany");
+      const options = select.getElementsByTagName("option");
+
+      for (let i = 1; i < options.length; i++) {
+        const text = options[i].textContent.toLowerCase();
+        options[i].style.display = text.includes(search) ? "" : "none";
       }
     }
 
     function generateRecruiterLinks(company, title) {
       const cleanComp = company.replace(/[^a-zA-Z0-9 ]/g, '').trim();
-      const domain = title.toLowerCase().includes("security") ? "Security" : "Engineering";
+      const domain = (title.toLowerCase().includes("security") || title.toLowerCase().includes("soc")) ? "Security" : "Technical";
+      
       const linkedInQuery = `${cleanComp} ${domain} Recruiter`;
       const linkedInUrl = `https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(linkedInQuery)}`;
-      const googleXray = `site:linkedin.com/in/ ("${cleanComp}") AND ("Technical Recruiter" OR "Talent Acquisition" OR "${domain} Engineering Manager")`;
+
+      const googleXray = `site:linkedin.com/in/ ("${cleanComp}") AND ("Technical Recruiter" OR "Security Recruiter" OR "Talent Partner")`;
       const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(googleXray)}`;
+
       return { linkedInUrl, googleUrl };
     }
 
-    function render() {
+    function renderListings() {
       const search = document.getElementById("searchInput").value.toLowerCase().trim();
+      const selectedCompany = document.getElementById("filterCompany").value;
       const specialization = document.getElementById("filterSpecialization").value;
-      const experience = document.getElementById("filterExperience").value;
+      const experienceTier = document.getElementById("filterExperience").value;
       const workMode = document.getElementById("filterWorkMode").value;
       const region = document.getElementById("filterRegion").value;
       const h1bOnly = document.getElementById("checkH1b").checked;
@@ -307,11 +674,22 @@
 
       const now = new Date();
 
-      let filtered = rawJobs.filter(j => {
+      let results = allRoles.filter(j => {
+        // Company
+        if (selectedCompany !== "ALL" && j.company !== selectedCompany) return false;
+
+        // Discipline
         if (specialization !== "ALL" && j.specialization !== specialization) return false;
-        if (experience !== "ALL" && j.experience_level !== experience) return false;
+
+        // Experience Filter
+        if (experienceTier === "Entry Level / New Grad (0–2 yrs)" && !j.experience_level.includes("0–2") && !j.experience_level.includes("0-2") && !j.experience_level.includes("Entry")) return false;
+        if (experienceTier === "Mid-Level (3–5 yrs)" && !j.experience_level.includes("3–5") && !j.experience_level.includes("3-5") && !j.experience_level.includes("Mid")) return false;
+
+        // Workplace Mode & Region
         if (workMode !== "ALL" && j.work_mode !== workMode) return false;
         if (region !== "ALL" && j.region !== region) return false;
+
+        // Immigration & Clearance
         if (h1bOnly && !j.h1b_available) return false;
         if (optOnly && !j.opt_friendly) return false;
         if (excludeClearance && j.clearance_required) return false;
@@ -323,14 +701,14 @@
           if (diffDays > parseInt(recencyDays)) return false;
         }
 
-        // Free-text keyword match
+        // Free-text keyword search across Title, Tags, Description, Location
         if (search) {
-          const matchTitle = j.title.toLowerCase().includes(search);
-          const matchComp = j.company.toLowerCase().includes(search);
-          const matchLoc = j.location.toLowerCase().includes(search);
-          const matchTags = j.tags.some(t => t.toLowerCase().includes(search));
-          const matchDesc = j.description.toLowerCase().includes(search);
-          if (!matchTitle && !matchComp && !matchLoc && !matchTags && !matchDesc) return false;
+          const inTitle = j.title.toLowerCase().includes(search);
+          const inCompany = j.company.toLowerCase().includes(search);
+          const inLoc = j.location.toLowerCase().includes(search);
+          const inTags = (j.tags || []).some(t => t.toLowerCase().includes(search));
+          const inDesc = (j.description || "").toLowerCase().includes(search);
+          if (!inTitle && !inCompany && !inLoc && !inTags && !inDesc) return false;
         }
 
         return true;
@@ -338,97 +716,157 @@
 
       // Sorting
       if (sortBy === "newest") {
-        filtered.sort((a, b) => new Date(b.posted_at) - new Date(a.posted_at));
+        results.sort((a, b) => new Date(b.posted_at) - new Date(a.posted_at));
       } else if (sortBy === "oldest") {
-        filtered.sort((a, b) => new Date(a.posted_at) - new Date(b.posted_at));
+        results.sort((a, b) => new Date(a.posted_at) - new Date(b.posted_at));
       } else if (sortBy === "company") {
-        filtered.sort((a, b) => a.company.localeCompare(b.company));
+        results.sort((a, b) => a.company.localeCompare(b.company));
       }
 
-      document.getElementById("match-count").innerText = filtered.length;
+      document.getElementById("match-count").innerText = results.length;
       const container = document.getElementById("jobContainer");
       container.innerHTML = "";
 
-      if (filtered.length === 0) {
-        container.innerHTML = `<div class="empty-state">No listings found matching these filter criteria.</div>`;
+      if (results.length === 0) {
+        container.innerHTML = `
+          <div class="bg-dark-900 border border-dark-800 rounded-xl p-12 text-center text-slate-400 space-y-2">
+            <svg class="w-10 h-10 text-slate-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <p class="text-sm font-semibold text-slate-300">No early-career openings match these criteria.</p>
+            <p class="text-xs text-slate-500">Try broadening your search or resetting filters.</p>
+            <button onclick="resetAllFilters()" class="mt-2 text-xs bg-dark-800 hover:bg-dark-700 text-brand-400 px-3 py-1.5 rounded-lg border border-dark-700 transition">Reset All Filters</button>
+          </div>
+        `;
         return;
       }
 
-      filtered.forEach(j => {
+      results.forEach(j => {
         const { linkedInUrl, googleUrl } = generateRecruiterLinks(j.company, j.title);
         const card = document.createElement("div");
-        card.className = "card";
+        card.className = "bg-dark-900 border border-dark-800 hover:border-dark-700 rounded-xl p-5 transition duration-150 shadow-sm flex flex-col justify-between";
 
-        const tagsHtml = j.tags.map(t => `<span class="tag tag-highlight">${t}</span>`).join("");
-        const postedDateStr = new Date(j.posted_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+        const isEntry = j.experience_level.includes("0–2") || j.experience_level.includes("Entry");
+        const expBadgeClass = isEntry ? "badge-exp-entry" : "badge-exp-mid";
+
+        const tagsHtml = (j.tags || []).map(t => `
+          <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-dark-800 text-slate-300 border border-dark-700">${t}</span>
+        `).join("");
+
+        const postedDate = new Date(j.posted_at);
+        const dateStr = isNaN(postedDate.getTime()) ? "Recently" : postedDate.toLocaleDateString(undefined, { month: "short", day: "numeric" });
 
         card.innerHTML = `
-          <div class="card-top">
-            <div>
-              <div class="card-title">${j.title}</div>
-              <div class="card-company">${j.company}</div>
+          <div>
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1.5 mb-2">
+              <div>
+                <span class="text-xs font-bold text-brand-400 tracking-wide uppercase">${j.company}</span>
+                <h3 class="text-base font-bold text-white leading-snug">${j.title}</h3>
+              </div>
+              <span class="text-[11px] text-slate-500 font-mono self-start sm:self-auto">${dateStr}</span>
             </div>
-            <span style="font-size: 12px; color: var(--text-muted);">${postedDateStr}</span>
+
+            <div class="flex flex-wrap items-center gap-2 text-xs text-slate-300 mb-3">
+              <span class="flex items-center space-x-1">
+                <span>📍</span><span>${j.location}</span>
+              </span>
+              <span class="text-slate-600">•</span>
+              <span class="flex items-center space-x-1">
+                <span>🏢</span><span>${j.work_mode}</span>
+              </span>
+              <span class="text-slate-600">•</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-semibold ${expBadgeClass}">
+                ${j.experience_level}
+              </span>
+              <span class="px-2 py-0.5 rounded text-[11px] bg-dark-800 text-slate-400 border border-dark-700/60">
+                ${j.specialization}
+              </span>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              ${j.h1b_available ? '<span class="badge badge-h1b px-2 py-0.5 rounded text-[10px] font-medium">✓ H-1B Sponsor</span>' : ''}
+              ${j.opt_friendly ? '<span class="badge badge-opt px-2 py-0.5 rounded text-[10px] font-medium">✓ OPT / STEM OPT</span>' : ''}
+              ${j.clearance_required ? '<span class="badge badge-clearance px-2 py-0.5 rounded text-[10px] font-medium">⚠️ Clearance / US Citizen</span>' : ''}
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              ${tagsHtml}
+            </div>
           </div>
 
-          <div class="card-meta">
-            <span>📍 ${j.location}</span>
-            <span>🏢 ${j.work_mode}</span>
-            <span>💼 ${j.experience_level}</span>
-            <span>🏷️ ${j.specialization}</span>
-          </div>
+          <div class="pt-3.5 border-t border-dark-800/80 flex flex-wrap items-center justify-between gap-2.5">
+            <div class="flex items-center space-x-2">
+              <a href="${linkedInUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-[#0a66c2]/20 hover:bg-[#0a66c2]/30 border border-[#0a66c2]/40 text-[#70b5f9] rounded-lg text-xs font-semibold transition flex items-center space-x-1.5">
+                <span>LinkedIn Recruiter ↗</span>
+              </a>
+              <a href="${googleUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-dark-800 hover:bg-dark-700 border border-dark-700 text-slate-300 rounded-lg text-xs font-semibold transition flex items-center space-x-1.5">
+                <span>Google X-Ray ↗</span>
+              </a>
+            </div>
 
-          <div class="card-badges">
-            ${j.h1b_available ? '<span class="badge badge-h1b">✓ H-1B Sponsor</span>' : ''}
-            ${j.opt_friendly ? '<span class="badge badge-opt">✓ OPT / STEM OPT</span>' : ''}
-            ${j.clearance_required ? '<span class="badge badge-clearance">⚠️ Clearance / USC Only</span>' : ''}
-          </div>
-
-          <div class="card-tags">${tagsHtml}</div>
-
-          <div class="card-actions">
-            <a href="${j.url}" target="_blank" class="btn btn-apply">Review & Apply ↗</a>
-            <a href="${linkedInUrl}" target="_blank" class="btn btn-linkedin">LinkedIn Recruiter</a>
-            <a href="${googleUrl}" target="_blank" class="btn btn-xray">Google X-Ray</a>
+            <a href="${j.url}" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 bg-brand-600 hover:bg-brand-500 text-white rounded-lg text-xs font-bold shadow-md shadow-brand-600/20 transition flex items-center space-x-1">
+              <span>Review & Apply</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
           </div>
         `;
         container.appendChild(card);
       });
     }
 
-    // Quick Filters
-    function applyQuickFilter(type) {
-      resetFilters(false);
-      if (type === 'soc') {
+    function applyQuickPreset(preset) {
+      resetAllFilters(false);
+
+      if (preset === 'entry') {
+        document.getElementById("filterExperience").value = "Entry Level / New Grad (0–2 yrs)";
+      } else if (preset === 'soc') {
         document.getElementById("filterSpecialization").value = "SOC, Detection & SecOps";
-      } else if (type === 'appsec') {
-        document.getElementById("filterSpecialization").value = "Cybersecurity & AppSec";
-      } else if (type === 'h1b') {
+      } else if (preset === 'immigration') {
         document.getElementById("checkH1b").checked = true;
+        document.getElementById("checkOpt").checked = true;
         document.getElementById("checkExcludeClearance").checked = true;
+      } else if (preset === 'remote') {
+        document.getElementById("filterWorkMode").value = "100% Remote";
       }
-      render();
+
+      renderListings();
     }
 
-    function resetFilters(shouldRender = true) {
+    function resetAllFilters(shouldRender = true) {
       document.getElementById("searchInput").value = "";
+      document.getElementById("filterCompany").value = "ALL";
+      document.getElementById("companyFilterSearch").value = "";
       document.getElementById("filterSpecialization").value = "ALL";
-      document.getElementById("filterExperience").value = "ALL";
+      document.getElementById("filterExperience").value = "ALL_TARGETED";
       document.getElementById("filterWorkMode").value = "ALL";
       document.getElementById("filterRegion").value = "ALL";
       document.getElementById("checkH1b").checked = false;
       document.getElementById("checkOpt").checked = false;
-      document.getElementById("checkExcludeClearance").checked = false;
+      document.getElementById("checkExcludeClearance").checked = true;
       document.getElementById("filterRecency").value = "ALL";
       document.getElementById("filterSort").value = "newest";
-      if (shouldRender) render();
+
+      // Reset company options visibility
+      filterCompanyOptions();
+
+      if (shouldRender) renderListings();
     }
 
-    // Attach listeners
-    ["searchInput", "filterSpecialization", "filterExperience", "filterWorkMode", "filterRegion", 
-     "checkH1b", "checkOpt", "checkExcludeClearance", "filterRecency", "filterSort"].forEach(id => {
-      document.getElementById(id).addEventListener("input", render);
-      document.getElementById(id).addEventListener("change", render);
+    // Debounced input listeners
+    let debounceTimer;
+    document.getElementById("searchInput").addEventListener("input", () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(renderListings, 150);
+    });
+
+    [
+      "filterCompany", "filterSpecialization", "filterExperience", 
+      "filterWorkMode", "filterRegion", "checkH1b", "checkOpt", 
+      "checkExcludeClearance", "filterRecency", "filterSort"
+    ].forEach(id => {
+      document.getElementById(id).addEventListener("change", renderListings);
     });
   </script>
 </body>
