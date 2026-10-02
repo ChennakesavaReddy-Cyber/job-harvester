@@ -298,5 +298,15 @@
   {"slug": "spacelift", "ats": "ashby", "name": "Spacelift"},
   {"slug": "env0", "ats": "ashby", "name": "env0"},
   {"slug": "scalenut", "ats": "ashby", "name": "Scalenut"},
-  {"slug": "terramate", "ats": "ashby", "name": "Terramate"}
+  {"slug": "terramate", "ats": "ashby", "name": "Terramate"},
+  {"slug": "salesforce", "ats": "workday", "name": "Salesforce", "wday_instance": "salesforce", "wday_path": "External_Career_Site"},
+  {"slug": "nvidia", "ats": "workday", "name": "NVIDIA", "wday_instance": "nvidia", "wday_path": "NVIDIAExternalCareerSite"},
+  {"slug": "adobe", "ats": "workday", "name": "Adobe", "wday_instance": "adobe", "wday_path": "external_experienced"},
+  {"slug": "servicenow", "ats": "workday", "name": "ServiceNow", "wday_instance": "servicenow", "wday_path": "ServiceNow"},
+  {"slug": "workday", "ats": "workday", "name": "Workday", "wday_instance": "workday", "wday_path": "Workday"},
+  {"slug": "intuit", "ats": "workday", "name": "Intuit", "wday_instance": "intuit", "wday_path": "IntuitCareers"},
+  {"slug": "uber", "ats": "enterprise", "name": "Uber Technologies"},
+  {"slug": "amazon", "ats": "enterprise", "name": "Amazon"},
+  {"slug": "google", "ats": "enterprise", "name": "Alphabet (Google)"},
+  {"slug": "cisco", "ats": "enterprise", "name": "Cisco Systems"}
 ]
