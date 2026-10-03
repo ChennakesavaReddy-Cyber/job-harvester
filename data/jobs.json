@@ -5503,28 +5503,6 @@
     "clearance_required": false
   },
   {
-    "id": "gh-netskope-7593876",
-    "company": "Netskope",
-    "title": "IT Business Application Engineer, Workday & HR Systems",
-    "location": "Bengaluru, Karnataka, India",
-    "url": "https://www.netskope.com/company/careers/open-positions/?gh_jid=7593876",
-    "description": "<div class=\"content-intro\"><h2>Join the Future of Security at Netskope</h2> <p>Netskope (NASDAQ: NTSK) is a leader in modern security and networking for the cloud and AI era. We secure and accelerate cloud, data, and AI in real time, everywhere. Thousands of customers, including more than 30 of the Fortune 100, trust the Netskope One platform, its Zero Trust Engine, and the powerful NewEdge network to gain full visibility and control without performance trade-offs.</p> <p>At Netskope, our technology is driven by our greatest strength: our people. We believe that belonging powers innovation, and success is both personal and organizational. We embrace differences in gender, ethnicity, beliefs, ability, and identity, creating an environment where every voice is heard and respected. We empower our employees to bring their authentic selves to work, grow their careers through continuous education and mentorship, and lead with transparency and curiosity. Join a team where you belong, where you are encouraged to be an entrepreneur, and where together, we continue to redefine the landscape of security.</p> <p>Visit <a href=\"https://www.netskope.com/company/careers\" target=\"_blank\">Careers at Netskope</a> to learn more. Follow us on&nbsp;<a href=\"https://www.linkedin.com/company/netskope\" target=\"_blank\">LinkedIn</a> and&nbsp;<a href=\"https://www.instagram.com/netskope/\" target=\"_blank\">Instagram</a>.</p></div><p><strong>About the Role</strong></p> <p><em>Please note, this team is hiring across all levels and candidates are individually assessed and appropriately leveled based upon their skills and experience.</em></p> <p>We are seeking an IT Application Engineer to partner with our HR team in building a secure, scalable backbone for Netskope\u2019s continued growth. As the technical steward of our enterprise HR systems, you will go beyond standard administration to focus on the full engineering lifecycle of our business-critical applications. In this role, you will own the IT security, disaster recovery, backend and integrations for Workday and architect the solutions that connect our people data to the rest of the business. You will be responsible for designing backend architecture, automating workflows, and building robust integrations, all while ensuring strict adherence to IT governance, security standards, and data integrity.</p> <p><strong>What\u2019s in it for you</strong></p> <p>You are a detail-oriented professional with a passion for ensuring data integrity and governance. With expertise in managing sensitive data, particularly HR-related information, you excel in creating and maintaining processes that ensure data is accurate, secure, and aligned with business goals. You thrive in a collaborative environment, working closely with stakeholders and technical teams to drive a data-driven culture across the organization.</p> <p><strong>What you will be doing</strong></p> <p><strong>System Architecture &amp; Advanced Configuration</strong></p> <ul> <li>Technical Ownership: Serve as a technical IT lead (integration design, test and troubleshoot) for the Workday ecosystem.</li> <li>Release Management: Lead bi-annual releases by analyzing \"What\u2019s New\" reports, executing regression testing, and identifying optimization opportunities.</li> </ul> <p><strong>Integration Engineering &amp; Middleware</strong></p> <ul> <li>Native Integrations: Develop robust integrations using Workday Studio (assembly/debugging), EIBs, DT/XSLT, Core Connectors, BIRT Templates, and Orchestrate.</li> <li>Enterprise Middleware (iPaaS): Architect cross-platform workflows (e.g., HRIS to ERP/CRM) using iPaaS solutions such as Workato.</li> <li>API Management: Implement secure data exchange solutions using REST/SOAP APIs.</li> </ul> <p><strong>Security, Identity &amp; Compliance</strong></p> <ul> <li>Identity Management: Collaborate with IT Security to manage SSO/SAML configurations and SCIM provisioning (Okta), ensuring automated \"hire-to-retire\" access.</li> <li>Security Architecture: Enforce Role-Based Access Control (RBAC) and Segregation of Duties (SoD).</li> <li>Governance: Conduct system audits to ensure strict adherence to SOX, SOC2, GDPR, CCPA, and internal IT General Controls (ITGC).</li> </ul> <p><strong>Operations &amp; Stakeholder Management</strong></p> <ul> <li>Escalation Management: Act as the Tier 2/3 escalation point for complex system issues and integration failures.</li> <li>Root Cause Analysis: Resolve data discrepancies between HRIS and downstream systems (ERP, ITSM, Active Directory, third party applications).</li> <li>Technical Communication: Translate complex technical constraints into clear, actionable insights for all stakeholders.</li> </ul> <p><strong>Required skills and experience</strong></p> <ul> <li>Experience: 4+ years of experience in Enterprise Systems Engineering or HRIS Administration.</li> <li>Workday Mastery: Deep technical knowledge of Workday integrations, Security, and Reporting.</li> <li>Integration Toolkit: Proven experience with Workday Studio and Workday EIB and Workday connector.&nbsp;</li> <li>Data Proficiency: Proficiency in WQL / SQL and experience using APIs (REST/SOAP) for data extraction and&nbsp; manipulation.</li> <li>Data Protection: Good understanding of PGP encryption/decryption concept and SFTP</li> <li>Identity Protocols: Familiarity with Okta lifecycle management, SSO, SAML, and SCIM provisioning.</li> <li>Compliance Mindset: Experience working in a public company or highly regulated environment, with critical familiarity regarding SOX/ITGC audits.</li> </ul> <p><strong>Core Competencies:</strong></p> <ul> <li>Communication: The ability to explain an API error to stakeholders&nbsp; without using jargon.</li> <li>Problem Solving: Strong capability to perform root-cause analysis on synchronization failures between disparate systems.</li> <li>Language: Fluent in English.</li> </ul> <p><strong>Nice-to-Haves:</strong></p> <ul> <li>Automation: Experience with scripting languages (Python, PowerShell, or JavaScript).</li> <li>Certification: Active Workday Pro or Partner certification in Integrations, Studio, and/or Core HCM.</li> </ul> <p><strong>Education</strong></p> <ul> <li>BSCS or equivalent required, MSCS or equivalent strongly preferred</li> </ul> <h2><span style=\"font-weight: 400; font-size: 14px;\">#LI-JB3</span></h2><div class=\"content-conclusion\"><p>Netskope is committed to implementing equal employment opportunities for all employees and applicants for employment. Netskope does not discriminate in employment opportunities or practices based on religion, race, color, sex, marital or veteran statues, age, national origin, ancestry, physical or mental disability, medical condition, sexual orientation, gender identity/expression, genetic information, pregnancy (including childbirth, lactation and related medical conditions), or any other characteristic protected by the laws or regulations of any jurisdiction in which we operate.</p> <p>Netskope respects your privacy and is committed to protecting the personal information you share with us, please refer to&nbsp;<a href=\"https://www.netskope.com/privacy-policy\">Netskope's Privacy Policy</a>&nbsp;for more details.</p> <p>The application window for this position is expected to close within 50 days. You may apply by filling out the below information, or visiting our&nbsp;<a href=\"https://www.netskope.com/company/careers/open-positions\">Netskope Careers site.</a></p></div>",
-    "ats": "greenhouse",
-    "posted_at": "2026-09-24T13:27:08-04:00",
-    "tags": [
-      "python",
-      "powershell",
-      "sql"
-    ],
-    "specialization": "Cybersecurity & AppSec",
-    "experience_level": "Mid-Level (3\u20135 yrs)",
-    "work_mode": "On-site",
-    "region": "Other / Remote",
-    "h1b_available": true,
-    "opt_friendly": true,
-    "clearance_required": false
-  },
-  {
     "id": "gh-netskope-8064456",
     "company": "Netskope",
     "title": "IT Support Analyst",
@@ -9578,24 +9556,6 @@
     "experience_level": "Mid-Level (3\u20135 yrs)",
     "work_mode": "100% Remote",
     "region": "Other / Remote",
-    "h1b_available": true,
-    "opt_friendly": true,
-    "clearance_required": false
-  },
-  {
-    "id": "gh-logicgate-4728797005",
-    "company": "LogicGate",
-    "title": "Professional Services Associate (Bellevue, WA / Chicago, IL)",
-    "location": "Chicago or Bellevue",
-    "url": "https://www.logicgate.ai/company/careers/?gh_jid=4728797005",
-    "description": "<div class=\"content-intro\"><p id=\"p-rc_f77f0f4b1c8fe26e-21\" data-path-to-node=\"4\"><strong data-path-to-node=\"4\" data-index-in-node=\"0\">About LogicGate</strong> <br>LogicGate is the leading AI GRC platform for the Enterprise, helping governance, risk, and compliance teams limit surprises, strengthen resilience, augment program performance, and confidently quantify impact and business value. Built to provide a centralized view of risk and complia<span class=\"citation-54 citation-end-54\">nce, with AI intelligence woven into the platform's core, LogicGate delivers real-time insights and actionable data to help drive current business decisions, with the flexibility to scale alongside evolving business needs. Recognized as a Leader in the GRC Market, LogicGate continues to further solidify its position as a best-in-class platform.</span></p> <p data-path-to-node=\"4\"><strong data-path-to-node=\"5\" data-index-in-node=\"0\"><span class=\"citation-53 citation-end-53\">The GRC Market<br></span></strong><span class=\"citation-52 citation-end-52\">Governance, Risk, and Compliance (GRC) is a rapidly expanding sector, with a global market size projected to reach $104.5 billion by 2031. LogicGate is at the forefront of this industry transformation, empowering enterprise professionals to navigate <sup class=\"superscript\" data-turn-source-index=\"3\"></sup></span>complex regulatory environments, manage critical uncertainty, and operate with integrity at scale.&nbsp;</p> <p></p> <hr> <p>&nbsp;</p></div><h1><strong>Professional Services Associate</strong></h1> <p><em>Location</em><strong><em>:&nbsp;</em></strong>Bellevue, WA or Chicago, IL (Hybrid)</p> <p>At LogicGate, we recognize that exceptional talent comes in all shapes and forms, and that there is no such thing as a 'perfect' candidate. The qualifications below represent the core competencies, skills, and experiences that align most closely with the day-to-day responsibilities of this role - if you don't check every single box and are excited about this work, we still highly encourage you to apply.</p> <h2><strong>About the Role</strong></h2> <p>As a Professional Services Associate, you will support bespoke customer engagements that go beyond standard implementation to deliver custom Risk Cloud\u00ae configurations, tailored GRC workflows, and actionable technical deliverables. As a key member of the Professional Services team, you will build hands-on platform expertise, expand your domain knowledge, and leverage cutting-edge tools, including embedded AI capabilities, to help customers maximize their investment in Risk Cloud from day one.</p> <h2><strong>What You\u2019ll Do</strong></h2> <ul> <li><strong>Application &amp; Workflow Configuration:</strong> Develop deep working knowledge of Risk Cloud to build hands-on Risk Cloud configurations and custom application workflows based on documented customer requirements and defined project plans.</li> <li><strong>Project Accountability &amp; Time Tracking:</strong> Track and log project time accurately across engagements while proactively communicating progress, blockers, and status updates to internal stakeholders.</li> <li><strong>Customer Interaction &amp; Documentation:</strong> Participate in and lead customer-facing working sessions alongside senior team members, capturing precise requirements and producing clean configuration documentation.</li> <li><strong>AI &amp; Workflow Efficiency:</strong> Utilize modern AI tools and automated utilities to streamline documentation drafting, summarize meeting notes, and accelerate daily task execution.</li> <li><strong>Continuous Skill Development:</strong> Complete assigned platform certifications and functional training modules to advance your technical proficiency within the Professional Services career track. While building core domain competency in GRC concepts, risk management, and compliance frameworks in support of client requirements</li> </ul> <h2><strong>What You Bring</strong></h2> <h3><strong><em>Required</em></strong></h3> <ul> <li><strong>Relevant Experience:</strong> 2 years of experience in professional services, technical implementation, SaaS support, or consulting\u2014or a relevant degree with a demonstrated interest in enterprise SaaS and risk management.</li> <li><strong>Precision &amp; Organization:</strong> High attention to detail with proven ability to document requirements accurately, track commitments reliably, and ask clarifying questions before making assumptions.</li> <li><strong>Clear Communication:</strong> Strong written and verbal communication skills to summarize technical discussions, author deliverables, and communicate project status to internal stakeholders.</li> <li><strong>Technical Aptitude:</strong> Curiosity and eagerness to develop deep expertise in Risk Cloud configuration, platform mechanics, and GRC domain standards.</li> <li><strong>Flexibility for On-Site Engagement:</strong> Willingness and ability to travel as needed for customer on-sites, team planning workshops, and company gatherings.</li> <li><strong>AI Literacy &amp; Curiosity:</strong> Comfort utilizing AI-assisted tools to accelerate research, organize project inputs, summarize requirements, and drive daily operational efficiency.</li> </ul> <h3><strong><em>Nice to Have:</em></strong></h3> <ul> <li><strong>GRC &amp; Compliance Exposure:</strong> Prior coursework, internship experience, or exposure to GRC, risk management, internal audit, or regulatory compliance standards.</li> <li><strong>SaaS Platform Experience:</strong> Experience configuring, supporting, or administering enterprise cloud applications such as ServiceNow, Salesforce, Jira, or comparable software.</li> <li><strong>Consulting Delivery:</strong> Experience participating in structured customer project engagements involving defined scopes, project timelines, and deliverable handoffs.</li> </ul> <p>The anticipated base salary range for the role is $70,000 - $80,000 per year + variable + equity + benefits. Actual salaries may vary and will be based on factors, such as the candidate's qualifications, skills, competencies, and proficiency for the role. Internal candidates who have current pay within or above the hiring range are still encouraged to apply if interested.</p> <p>&nbsp;</p> <p><strong>Office Location</strong><strong><br></strong><strong><br></strong>This role is classified as Hybrid, based out of our Chicago HQ or Bellevue office. You are expected to be available to work from the office as needed to support in-person collaboration with your team which may include recurring in-office days.</p><div class=\"content-conclusion\"><p><strong>How We Work</strong><strong><br></strong>At LogicGate, we empower organizations to transform risk into a strategic advantage. As we continue to scale, we are looking for driven, high-performing individuals who are ready to take ownership, raise the bar, and do the best work of their careers.</p> <p>Our culture is built on execution, collaboration, and a shared commitment to excellence. We believe the strongest, most innovative teams are forged by diverse perspectives. We are dedicated to fostering an inclusive environment where differences are celebrated and supported.</p> <p><strong>Global Total Rewards</strong> <br>We invest in our people with a comprehensive and competitive rewards package designed to support our team members across the US and the UK:</p> <ul> <li><strong>Compensation &amp; Equity:</strong> Competitive base salaries, variable compensation plans, and equity options.</li> <li><strong>Health &amp; Wellbeing:</strong> Comprehensive health, wellness, and lifestyle benefits tailored to your region.</li> <li><strong>Time Away:</strong> Generous paid time off and annual company holidays so you can recharge and return at your best.</li> <li><strong>Growth &amp; Development:</strong> Continuous career advancement through structured mentorship, leadership training, and premium learning platforms.</li> </ul> <p><em>Recognized as a top workplace by Built In, Crain\u2019s Chicago Business, and the Chicago Tribune.</em></p></div>",
-    "ats": "greenhouse",
-    "posted_at": "2026-09-30T14:16:23-04:00",
-    "tags": [],
-    "specialization": "SOC, Detection & SecOps",
-    "experience_level": "Entry Level / New Grad (0\u20132 yrs)",
-    "work_mode": "On-site",
-    "region": "California (SF, Silicon Valley, LA)",
     "h1b_available": true,
     "opt_friendly": true,
     "clearance_required": false
@@ -43367,7 +43327,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10544617/security-engineer-aws-security",
     "description": "Amazon Web Services (AWS) is the leading cloud provider, providing virtualised infrastructure, storage, networking, messaging, and many other services to customers all over the world. AWS runs a globally",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.148794+00:00",
+    "posted_at": "2026-10-03T20:27:34.424304+00:00",
     "tags": [
       "aws"
     ],
@@ -43387,7 +43347,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10423968/security-engineer-cs-security",
     "description": "Are you passionate about delivering innovative security solutions and protecting millions of customers through a blend of deep security expertise, hands-on coding, and building scalable security guardrails",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.148931+00:00",
+    "posted_at": "2026-10-03T20:27:34.424492+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43405,7 +43365,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10406134/security-engineer-aws-security",
     "description": "We're looking for a Security Engineer to join the team that secures the foundational compute and networking systems powering AWS \u2014 the systems behind EC2, Nitro, EBS, VPC, and more.You'll work directly",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.149036+00:00",
+    "posted_at": "2026-10-03T20:27:34.424628+00:00",
     "tags": [
       "aws"
     ],
@@ -43425,7 +43385,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568447/security-engineer-aws-security",
     "description": "The AppSec Security Engineer evaluates service design and architecture and performs deep-dive security assessments to ensure applications and services meet a high security bar before launch. This role",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.149144+00:00",
+    "posted_at": "2026-10-03T20:27:34.424781+00:00",
     "tags": [
       "aws"
     ],
@@ -43445,7 +43405,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10432868/security-engineer-leo-security",
     "description": "We are open to hiring candidates to work out of one of the following locations:Redmond, WA, USALeo is an initiative to launch a constellation of Low Earth Orbit satellites that will provide low-latency,",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.149240+00:00",
+    "posted_at": "2026-10-03T20:27:34.424907+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43463,7 +43423,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10378597/security-engineer-cs-security",
     "description": "Are you passionate about delivering innovative security solutions and protecting millions of customers through a blend of deep security expertise, hands-on coding, and building scalable security guardrails",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.149350+00:00",
+    "posted_at": "2026-10-03T20:27:34.425036+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43481,7 +43441,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568448/security-engineer-aws-security",
     "description": "The AppSec Security Engineer evaluates service design and architecture and performs deep-dive security assessments to ensure applications and services meet a high security bar before launch. This role",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.149445+00:00",
+    "posted_at": "2026-10-03T20:27:34.425158+00:00",
     "tags": [
       "aws"
     ],
@@ -43501,7 +43461,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568038/security-engineer-ai-security",
     "description": "Join the team that helps protect the Amazon and our customers. The scale of Amazon and diversity of customers means your work would have far-reaching impacts across a broad range of industries around the",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.149537+00:00",
+    "posted_at": "2026-10-03T20:27:34.425277+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43519,7 +43479,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10552745/security-engineer-leo-security",
     "description": "Amazon Leo is an initiative to launch a constellation of Low Earth Orbit satellites that will provide low-latency, high-speed broadband network connectivity to unserved and underserved communities around",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.149635+00:00",
+    "posted_at": "2026-10-03T20:27:34.425404+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43537,7 +43497,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568037/security-engineer-ai-security",
     "description": "Join the team that helps protect the Amazon and our customers. The scale of Amazon and diversity of customers means your work would have far-reaching impacts across a broad range of industries around the",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.149727+00:00",
+    "posted_at": "2026-10-03T20:27:34.425525+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43555,7 +43515,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10564381/security-engineer-cs-security",
     "description": "Are you passionate about delivering innovative security solutions and protecting millions of customers through a blend of deep security expertise, hands-on coding, and building scalable security guardrails",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.149821+00:00",
+    "posted_at": "2026-10-03T20:27:34.425647+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43573,7 +43533,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10551921/security-engineer-aws-security",
     "description": "Come and build innovative services that protect our cloud from security threats.As a Security Engineer (SecEng), you\u2019ll help to build and manage services that detect and automate the mitigation of cybersecurity",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.149917+00:00",
+    "posted_at": "2026-10-03T20:27:34.425780+00:00",
     "tags": [
       "aws"
     ],
@@ -43593,7 +43553,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10512090/security-engineer-ads-security",
     "description": "The ideal candidate will have a broad understanding of proactive security, have past experience leading security assessments, and have the ability to work with product and engineering teams in designing",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.150021+00:00",
+    "posted_at": "2026-10-03T20:27:34.425916+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43611,7 +43571,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10535198/security-engineer-aws-security",
     "description": "We're looking for a Security Engineer to join the team that secures the foundational Identity and crypto services powering AWS.You'll work directly with service teams across some of the most critical systems",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.150117+00:00",
+    "posted_at": "2026-10-03T20:27:34.426046+00:00",
     "tags": [
       "aws"
     ],
@@ -43631,7 +43591,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568221/application-security-engineer",
     "description": "Help us protect not only the Amazon Web Services (AWS) cloud computing environment but all of our customers as well! Since 2006, our great team at AWS has been enabling our customers to bring great ideas",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.150215+00:00",
+    "posted_at": "2026-10-03T20:27:34.426173+00:00",
     "tags": [
       "aws"
     ],
@@ -43651,7 +43611,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568241/application-security-engineer",
     "description": "Help us protect not only the Amazon Web Services (AWS) cloud computing environment but all of our customers as well! Since 2006, our great team at AWS has been enabling our customers to bring great ideas",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.150311+00:00",
+    "posted_at": "2026-10-03T20:27:34.426297+00:00",
     "tags": [
       "aws"
     ],
@@ -43671,7 +43631,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10509690/mobile-security-engineer-application-security",
     "description": "Amazon\u2019s Stores Application Security Team is seeking a Mobile Security Engineer to help keep Amazon secure for its customers. In this role, you will attack Amazon\u2019s services, mobile applications to discover",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.150422+00:00",
+    "posted_at": "2026-10-03T20:27:34.426428+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43689,7 +43649,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568040/security-engineer-ai-security",
     "description": "Join the team that helps protect the Amazon and our customers. The scale of Amazon and diversity of customers means your work would have far-reaching impacts across a broad range of industries around the",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.150538+00:00",
+    "posted_at": "2026-10-03T20:27:34.426571+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43707,7 +43667,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568036/security-engineer-ai-security",
     "description": "Join the team that helps protect the Amazon and our customers. The scale of Amazon and diversity of customers means your work would have far-reaching impacts across a broad range of industries around the",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.150657+00:00",
+    "posted_at": "2026-10-03T20:27:34.426694+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43725,7 +43685,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10535199/security-engineer-aws-security",
     "description": "We're looking for a Security Engineer to join the team that secures the foundational Identity and Crypto services powering AWS.You'll work directly with service teams across some of the most critical systems",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.150753+00:00",
+    "posted_at": "2026-10-03T20:27:34.426826+00:00",
     "tags": [
       "aws"
     ],
@@ -43745,7 +43705,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10535106/security-engineer-aws-security",
     "description": "Applicants must be Australian citizens and hold or be eligible to obtain an Australian Government Security Clearance, with the ability to successfully complete an Organisational Suitability Assessment.",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.150848+00:00",
+    "posted_at": "2026-10-03T20:27:34.426950+00:00",
     "tags": [
       "aws"
     ],
@@ -43765,7 +43725,7 @@
     "url": "https://www.amazon.jobs/en/jobs/3128132/security-engineer-aws-security",
     "description": "Applicants must be Australian citizens and hold or be eligible to obtain an Australian Government Security Clearance, with the ability to successfully complete an Organisational Suitability Assessment.",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.150941+00:00",
+    "posted_at": "2026-10-03T20:27:34.427069+00:00",
     "tags": [
       "aws"
     ],
@@ -43785,7 +43745,7 @@
     "url": "https://www.amazon.jobs/en/jobs/3205651/security-engineer-stores-application-security",
     "description": "In Amazon Stores, we ship some of the widest arrays of technology found at any company. From amazon.com to world class machine learning pipelines, from Innovative digital healthcare to no-checkout retail,",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.151032+00:00",
+    "posted_at": "2026-10-03T20:27:34.427187+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43803,7 +43763,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10510072/security-engineer-corporate-services-security",
     "description": "The Corporate Services Security (CPSS) Finance and Communication Security (FCS) Team is responsible for securing the applications, infrastructure and data developed across Finance & Global Business Services",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.151134+00:00",
+    "posted_at": "2026-10-03T20:27:34.427320+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43821,7 +43781,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10521207/security-engineer-aws-appsec",
     "description": "AWS Security is looking for an Application Security Engineer to help validate that our services, applications, and websites are designed and implemented to the highest security standards. You will be responsible",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.151239+00:00",
+    "posted_at": "2026-10-03T20:27:34.427455+00:00",
     "tags": [
       "aws"
     ],
@@ -43841,7 +43801,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10504090/security-engineer-iii-amz9971078",
     "description": "MULTIPLE POSITIONS AVAILABLEEmployer: AMAZON DEVELOPMENT CENTER U.S., INC.Offered Position: Security Engineer IIIJob Location: New York, New YorkJob Number: AMZ9971078Position Responsibilities:Partner",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.151342+00:00",
+    "posted_at": "2026-10-03T20:27:34.427580+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43859,7 +43819,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10487669/security-engineer-ii-amz9802161",
     "description": "MULTIPLE POSITIONS AVAILABLEEmployer: AMAZON WEB SERVICES, INC.Offered Position: Security Engineer IIJob Location: Austin, TexasJob Number: AMZ9802161Position Responsibilities:Provide frontline support",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.151439+00:00",
+    "posted_at": "2026-10-03T20:27:34.427704+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43877,7 +43837,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10555731/security-engineer-region-services",
     "description": "G'day! You've found an opportunity that could define your next chapter.Applicants must be Australian citizens and hold or be eligible to obtain an Australian Government Security Clearance with the ability",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.151532+00:00",
+    "posted_at": "2026-10-03T20:27:34.427859+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -43895,7 +43855,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10490608/content-security-engineer-gme-security",
     "description": "The Content Security team protects pre-release content across Amazon Global Media and Entertainment. This Content Security Engineer role combines hands-on production security advisory with technical execution:",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-03T15:33:27.151636+00:00",
+    "posted_at": "2026-10-03T20:27:34.427996+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
