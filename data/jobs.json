@@ -19831,24 +19831,6 @@
     "clearance_required": false
   },
   {
-    "id": "gh-jfrog-7963399",
-    "company": "JFrog",
-    "title": "Business Development Representative ",
-    "location": "london, uk",
-    "url": "https://join.jfrog.com/job/?job=7963399&gh_jid=7963399",
-    "description": "<p class=\"p1\"><strong data-start=\"234\" data-end=\"362\">Hybrid role (3 days in the office, 2 days remote), based in our London office at HYLO, 103\u2013105 Bunhill Row, London EC1Y 8LZ.</strong></p> <p>At JFrog, we\u2019re reinventing DevOps to help the world\u2019s greatest companies innovate -- and we want you along for the ride. This is a special place with a unique combination of brilliance, spirit and just all-around great people. Here, if you\u2019re willing to do more, your career can take off. And since software plays a central role in everyone\u2019s lives, you\u2019ll be part of an important mission. Join us on our journey!</p> <p>We are looking for a driven Business Development Representative to join our fast-growing Sales Development Unit. In this role, you will work closely with Marketing and Sales to help drive JFrog\u2019s solutions. You will develop new business opportunities through outbound prospecting, cold calling, email campaigns, and inbound lead follow-up.</p> <h5><strong>As a Business Development Representative at JFrog you will...</strong></h5> <ul> <li>Internalize JFrog\u2019s mission, vision, and values</li> <li>Generate new business pipelines through outbound prospecting activities and inbound lead follow-up</li> <li>Maintain sales data through Salesforce that will influence monthly/quarterly sales reports, pipelines, forecasts, etc</li> <li>Research and evaluate prospects prior to engagement</li> <li>Establish active communication and engagement with prospects to create new leads and sales opportunities</li> <li>Collaborate with sales and marketing to build a sales strategy for generating new prospects</li> </ul> <h5><strong>To be a Business Development Representative at JFrog you need...</strong></h5> <ul> <li>English native - mandatory</li> <li>German / French / Spanish / Italian - an advantage</li> <li>1-2 years of experience as a BDR/SDR</li> <li>Strong communication and interpersonal skills</li> <li>Ability to multi-task and work in a fast-paced environment</li> <li>Motivated by individual and team achievement</li> <li>Highly organized with the ability to multitask, prioritize, and manage time efficiently</li> <li>Knowledge of Salesforce and use of sales acceleration tools like Outreach</li> </ul>",
-    "ats": "greenhouse",
-    "posted_at": "2026-10-04T01:57:48-04:00",
-    "tags": [],
-    "specialization": "Cybersecurity & AppSec",
-    "experience_level": "Mid-Level (3\u20135 yrs)",
-    "work_mode": "Hybrid",
-    "region": "Other / Remote",
-    "h1b_available": true,
-    "opt_friendly": true,
-    "clearance_required": false
-  },
-  {
     "id": "gh-jfrog-7694707",
     "company": "JFrog",
     "title": "Business Development Representative ",
@@ -19862,6 +19844,24 @@
     "experience_level": "Mid-Level (3\u20135 yrs)",
     "work_mode": "Hybrid",
     "region": "New York, NY",
+    "h1b_available": true,
+    "opt_friendly": true,
+    "clearance_required": false
+  },
+  {
+    "id": "gh-jfrog-7963399",
+    "company": "JFrog",
+    "title": "Business Development Representative ",
+    "location": "london, uk",
+    "url": "https://join.jfrog.com/job/?job=7963399&gh_jid=7963399",
+    "description": "<p class=\"p1\"><strong data-start=\"234\" data-end=\"362\">Hybrid role (3 days in the office, 2 days remote), based in our London office at HYLO, 103\u2013105 Bunhill Row, London EC1Y 8LZ.</strong></p> <p>At JFrog, we\u2019re reinventing DevOps to help the world\u2019s greatest companies innovate -- and we want you along for the ride. This is a special place with a unique combination of brilliance, spirit and just all-around great people. Here, if you\u2019re willing to do more, your career can take off. And since software plays a central role in everyone\u2019s lives, you\u2019ll be part of an important mission. Join us on our journey!</p> <p>We are looking for a driven Business Development Representative to join our fast-growing Sales Development Unit. In this role, you will work closely with Marketing and Sales to help drive JFrog\u2019s solutions. You will develop new business opportunities through outbound prospecting, cold calling, email campaigns, and inbound lead follow-up.</p> <h5><strong>As a Business Development Representative at JFrog you will...</strong></h5> <ul> <li>Internalize JFrog\u2019s mission, vision, and values</li> <li>Generate new business pipelines through outbound prospecting activities and inbound lead follow-up</li> <li>Maintain sales data through Salesforce that will influence monthly/quarterly sales reports, pipelines, forecasts, etc</li> <li>Research and evaluate prospects prior to engagement</li> <li>Establish active communication and engagement with prospects to create new leads and sales opportunities</li> <li>Collaborate with sales and marketing to build a sales strategy for generating new prospects</li> </ul> <h5><strong>To be a Business Development Representative at JFrog you need...</strong></h5> <ul> <li>English native - mandatory</li> <li>German / French / Spanish / Italian - an advantage</li> <li>1-2 years of experience as a BDR/SDR</li> <li>Strong communication and interpersonal skills</li> <li>Ability to multi-task and work in a fast-paced environment</li> <li>Motivated by individual and team achievement</li> <li>Highly organized with the ability to multitask, prioritize, and manage time efficiently</li> <li>Knowledge of Salesforce and use of sales acceleration tools like Outreach</li> </ul>",
+    "ats": "greenhouse",
+    "posted_at": "2026-10-04T01:57:48-04:00",
+    "tags": [],
+    "specialization": "Cybersecurity & AppSec",
+    "experience_level": "Mid-Level (3\u20135 yrs)",
+    "work_mode": "Hybrid",
+    "region": "Other / Remote",
     "h1b_available": true,
     "opt_friendly": true,
     "clearance_required": false
@@ -19921,24 +19921,6 @@
     "clearance_required": false
   },
   {
-    "id": "gh-jfrog-7434101",
-    "company": "JFrog",
-    "title": "Developer Advocate",
-    "location": "Tel Aviv/ Netanya, Israel",
-    "url": "https://join.jfrog.com/job/?job=7434101&gh_jid=7434101",
-    "description": "<p>JFrog powers how the world builds, secures, and ships software. Thousands of organizations, including most of the Fortune 100, rely on JFrog to manage their software supply chain from code to production. As we continue expanding across DevOps, DevSecOps, software distribution, CI/CD, AI tooling, and developer experience, we\u2019re looking for a Developer Advocate who can help bring our platform, innovations, and community impact to the next level.</p> <p>This role sits at the intersection of engineering, product, and the global developer community. You\u2019ll translate JFrog\u2019s technical work across all domains, repositories, security, release management, pipelines, distribution, metadata, AI/ML, and ecosystem integrations, into content, demos, talks, and conversations that developers trust. You\u2019ll also bring community insights back into JFrog\u2019s R&amp;D and business teams to influence product direction.</p> <h5><strong>As a Developer Advocate at JFrog you will:</strong></h5> <ul> <li>Represent JFrog across developer, DevOps, security, and platform-engineering communities through conferences, meetups, webinars, podcasts, and online conversations</li> <li>Create high-quality technical content: deep-dive articles, demos, hands-on guides, screencasts, code samples, and social content</li> <li>Build compelling demos and storytelling around JFrog\u2019s core domains: Artifactory, Xray, Curation, Distribution, Pipelines, Workers, Fly, AI/MCP, and ecosystem integrations like GitHub</li> <li>Collaborate closely with R&amp;D, Product, Security, Solutions Engineering, Architecture, and Customer Success to deeply understand new capabilities and provide practical feedback</li> <li>Engage with open source and developer communities, finding new channels and conversations where JFrog should have a voice</li> <li>Partner with Marketing to strengthen messaging while preserving technical credibility</li> <li>Monitor and report impact across community engagement, content performance, OSS participation, and broader DevRel KPIs</li> </ul> <h5><strong>To be a Developer Advocate at JFrog you need\u2026</strong></h5> <ul> <li>Bachelor\u2019s degree in CS, Software Engineering, Cybersecurity, or a related field (or equivalent experience)</li> <li>8 years of hands-on experience as a Software Engineer, DevOps Engineer, Security Engineer, Researcher, Architect, or similar technical role</li> <li>Proven experience presenting technical topics to developers or technical audiences</li> <li>Strong writing and storytelling ability around complex concepts</li> <li>Deep understanding of the DevOps / DevSecOps ecosystem, software supply chain, CI/CD workflows, and modern developer tooling</li> <li>Ability to communicate clearly with developers, leaders, customers, and community members</li> <li>Familiarity with key developer and professional social platforms (e.g., LinkedIn, Reddit, Twitter/X, Slack, Discord) for community engagement and content amplification</li> <li>Comfortable setting goals, executing independently, and measuring impact</li> <li>Genuine enthusiasm for engaging communities, learning in public, and amplifying real developer value</li> <li>A willingness to travel to conferences, customer events, and community gatherings</li> </ul>",
-    "ats": "greenhouse",
-    "posted_at": "2026-10-04T01:57:48-04:00",
-    "tags": [],
-    "specialization": "Software Engineering",
-    "experience_level": "Mid-Level (3\u20135 yrs)",
-    "work_mode": "On-site",
-    "region": "New York, NY",
-    "h1b_available": true,
-    "opt_friendly": true,
-    "clearance_required": false
-  },
-  {
     "id": "gh-jfrog-7618800",
     "company": "JFrog",
     "title": "Developer Advocate",
@@ -19952,6 +19934,24 @@
     "experience_level": "Mid-Level (3\u20135 yrs)",
     "work_mode": "Hybrid",
     "region": "Other / Remote",
+    "h1b_available": true,
+    "opt_friendly": true,
+    "clearance_required": false
+  },
+  {
+    "id": "gh-jfrog-7434101",
+    "company": "JFrog",
+    "title": "Developer Advocate",
+    "location": "Tel Aviv/ Netanya, Israel",
+    "url": "https://join.jfrog.com/job/?job=7434101&gh_jid=7434101",
+    "description": "<p>JFrog powers how the world builds, secures, and ships software. Thousands of organizations, including most of the Fortune 100, rely on JFrog to manage their software supply chain from code to production. As we continue expanding across DevOps, DevSecOps, software distribution, CI/CD, AI tooling, and developer experience, we\u2019re looking for a Developer Advocate who can help bring our platform, innovations, and community impact to the next level.</p> <p>This role sits at the intersection of engineering, product, and the global developer community. You\u2019ll translate JFrog\u2019s technical work across all domains, repositories, security, release management, pipelines, distribution, metadata, AI/ML, and ecosystem integrations, into content, demos, talks, and conversations that developers trust. You\u2019ll also bring community insights back into JFrog\u2019s R&amp;D and business teams to influence product direction.</p> <h5><strong>As a Developer Advocate at JFrog you will:</strong></h5> <ul> <li>Represent JFrog across developer, DevOps, security, and platform-engineering communities through conferences, meetups, webinars, podcasts, and online conversations</li> <li>Create high-quality technical content: deep-dive articles, demos, hands-on guides, screencasts, code samples, and social content</li> <li>Build compelling demos and storytelling around JFrog\u2019s core domains: Artifactory, Xray, Curation, Distribution, Pipelines, Workers, Fly, AI/MCP, and ecosystem integrations like GitHub</li> <li>Collaborate closely with R&amp;D, Product, Security, Solutions Engineering, Architecture, and Customer Success to deeply understand new capabilities and provide practical feedback</li> <li>Engage with open source and developer communities, finding new channels and conversations where JFrog should have a voice</li> <li>Partner with Marketing to strengthen messaging while preserving technical credibility</li> <li>Monitor and report impact across community engagement, content performance, OSS participation, and broader DevRel KPIs</li> </ul> <h5><strong>To be a Developer Advocate at JFrog you need\u2026</strong></h5> <ul> <li>Bachelor\u2019s degree in CS, Software Engineering, Cybersecurity, or a related field (or equivalent experience)</li> <li>8 years of hands-on experience as a Software Engineer, DevOps Engineer, Security Engineer, Researcher, Architect, or similar technical role</li> <li>Proven experience presenting technical topics to developers or technical audiences</li> <li>Strong writing and storytelling ability around complex concepts</li> <li>Deep understanding of the DevOps / DevSecOps ecosystem, software supply chain, CI/CD workflows, and modern developer tooling</li> <li>Ability to communicate clearly with developers, leaders, customers, and community members</li> <li>Familiarity with key developer and professional social platforms (e.g., LinkedIn, Reddit, Twitter/X, Slack, Discord) for community engagement and content amplification</li> <li>Comfortable setting goals, executing independently, and measuring impact</li> <li>Genuine enthusiasm for engaging communities, learning in public, and amplifying real developer value</li> <li>A willingness to travel to conferences, customer events, and community gatherings</li> </ul>",
+    "ats": "greenhouse",
+    "posted_at": "2026-10-04T01:57:48-04:00",
+    "tags": [],
+    "specialization": "Software Engineering",
+    "experience_level": "Mid-Level (3\u20135 yrs)",
+    "work_mode": "On-site",
+    "region": "New York, NY",
     "h1b_available": true,
     "opt_friendly": true,
     "clearance_required": false
@@ -20299,6 +20299,24 @@
     "experience_level": "Mid-Level (3\u20135 yrs)",
     "work_mode": "Hybrid",
     "region": "Other / Remote",
+    "h1b_available": true,
+    "opt_friendly": true,
+    "clearance_required": false
+  },
+  {
+    "id": "gh-jfrog-8045681",
+    "company": "JFrog",
+    "title": "Strategic Account Executive",
+    "location": "Remote, Germany",
+    "url": "https://join.jfrog.com/job/?job=8045681&gh_jid=8045681",
+    "description": "<p>Residency in Germany is required. Currently, this position is remote and does not require working from the office.&nbsp;<span style=\"color: rgb(255, 255, 255);\">&nbsp;</span><span style=\"color: rgb(255, 255, 255);\">#LI-Remote</span></p> <p>At JFrog, we\u2019re reinventing DevSecOps to help the world\u2019s greatest companies innovate securely-- recognized by Gartner as a Leader in the Software Supply Chain Security. JFrog supports over 7,500 customers globally, including 86% of the Fortune 100. We are publicly listed on NASDAQ (FROG). . Since software plays a central role in everyone\u2019s lives, you\u2019ll be part of an important mission: Helping our customers manage, accelerate and secure their software delivery from code to production. Be part of a company guided by our <strong>JFrog Codex </strong>developed and integrated by the employees: <strong>WIN!</strong>, <strong>Care</strong>, <strong>Integrity and Fairness</strong>, <strong>Community &amp; Customer Happiness</strong>, <strong>Thinking BIG</strong>, <strong>Everyone Counts Everyone Matters</strong>, <strong>Innovation</strong>, and <strong>Team Spirit</strong>. These values aren't just words; they shape our daily interactions and our commitment to our customers and each other.</p> <p>We're hiring a Strategic Account Executive for the DACH region. This is a pivotal role focused exclusively on upselling and expanding our footprint within JFrog's largest existing enterprise customers across Germany, Austria, and Switzerland - brand names, you are likely familiar with. Your success will be measured by your ability to deepen partnerships and <strong>grow revenue streams within our valued customer base, specifically growing the SaaS and Security ARR.</strong></p> <h5><strong>As a Strategic Account Executive at JFrog you will\u2026</strong></h5> <ul> <li><strong>Strategic Account Expansion:</strong> Proactively identify, develop, and close upsell and cross-sell opportunities within a defined portfolio of large enterprise accounts. This includes Account Planning and prioritization of opportunities using Methodologies like MEDDPICC and Challenger Sales.</li> <li><strong>Relationship Management:</strong> Cultivate and nurture strong, long-term relationships with key decision-makers and influencers at all levels, including C-suite executives, within your existing client base.</li> <li><strong>Cross-Functional Collaboration:</strong> Partner closely with internal teams including Channel, Customer Success, Solution Engineering, Product, Marketing, and Legal to ensure seamless customer enablement, strategic alignment, and continuous value delivery.</li> </ul> <h5><strong>To be a Strategic Account Executive at JFrog you need\u2026</strong></h5> <h5><strong>Essential Skills &amp; Experience:</strong></h5> <ul> <li><strong>Proven Performer:</strong> A consistent history of exceeding quotas over 3+ years in complex B2B SaaS sales, closing high-value deals within major enterprise accounts.A master of the existing customer base.</li> <li><strong>Consultative Seller:</strong> The ability to act as a trusted advisor, understanding your customers\u2019 business initiatives and translating them into the individual business value of the JFrog platform and demonstrating, together with Solution Engineering, those values on a technical level.&nbsp;</li> <li><strong>Technically Credible:</strong> A strong aptitude for technology that allows you to engage confidently with both technical and business leaders.</li> </ul> <h5><strong>DACH Market Specifics for Success:</strong></h5> <ul> <li>Excellent command of the German language (C2 level or equivalent, written and spoken) is required, alongside English.&nbsp;</li> <li>Familiarity with regulations like GDPR, DORA, NIS2 and AI Act, with the ability to confidently explain compliance measures to prospects is a huge benefit.&nbsp;</li> <li>A data-driven, proof-focused sales strategy leveraging ROI analyses and proven customer success stories\u05e5</li> </ul> <h3><strong>Why JFrog?</strong></h3> <p>We invest in our people. Here is what we offer to help you thrive:</p> <p><strong>Compensation &amp; Equity</strong></p> <ul> <li><strong>Uncapped Earnings:</strong> Competitive base with a robust commission structure, accelerators, and incentives for recurring revenue/multi-year contracts.</li> <li><strong>Equity:</strong> RSU grants.</li> </ul> <p><strong>Growth &amp; Development</strong></p> <ul> <li><strong>Learning:</strong> Dedicated L&amp;D funds for external training, certifications, and conferences.</li> <li><strong>Career Path:</strong> Mentorship, clear progression</li> <li><strong>Support:</strong> Cutting-edge sales tools, engaging projects, and recognition.</li> </ul> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p>",
+    "ats": "greenhouse",
+    "posted_at": "2026-10-10T17:31:05-04:00",
+    "tags": [],
+    "specialization": "Cybersecurity & AppSec",
+    "experience_level": "Mid-Level (3\u20135 yrs)",
+    "work_mode": "100% Remote",
+    "region": "New York, NY",
     "h1b_available": true,
     "opt_friendly": true,
     "clearance_required": false
@@ -44247,7 +44265,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10423968/security-engineer-cs-security",
     "description": "Are you passionate about delivering innovative security solutions and protecting millions of customers through a blend of deep security expertise, hands-on coding, and building scalable security guardrails",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.195624+00:00",
+    "posted_at": "2026-10-11T03:22:56.365417+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44265,7 +44283,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10544617/security-engineer-aws-security",
     "description": "Amazon Web Services (AWS) is the leading cloud provider, providing virtualised infrastructure, storage, networking, messaging, and many other services to customers all over the world. AWS runs a globally",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.195800+00:00",
+    "posted_at": "2026-10-11T03:22:56.365574+00:00",
     "tags": [
       "aws"
     ],
@@ -44285,7 +44303,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10406134/security-engineer-aws-security",
     "description": "We're looking for a Security Engineer to join the team that secures the foundational compute and networking systems powering AWS \u2014 the systems behind EC2, Nitro, EBS, VPC, and more.You'll work directly",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.195925+00:00",
+    "posted_at": "2026-10-11T03:22:56.365682+00:00",
     "tags": [
       "aws"
     ],
@@ -44305,7 +44323,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568448/security-engineer-aws-security",
     "description": "The AppSec Security Engineer evaluates service design and architecture and performs deep-dive security assessments to ensure applications and services meet a high security bar before launch. This role",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.196049+00:00",
+    "posted_at": "2026-10-11T03:22:56.365790+00:00",
     "tags": [
       "aws"
     ],
@@ -44325,7 +44343,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568038/security-engineer-ai-security",
     "description": "Join the team that helps protect the Amazon and our customers. The scale of Amazon and diversity of customers means your work would have far-reaching impacts across a broad range of industries around the",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.196162+00:00",
+    "posted_at": "2026-10-11T03:22:56.365887+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44343,7 +44361,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10552745/security-engineer-leo-security",
     "description": "Amazon Leo is an initiative to launch a constellation of Low Earth Orbit satellites that will provide low-latency, high-speed broadband network connectivity to unserved and underserved communities around",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.196280+00:00",
+    "posted_at": "2026-10-11T03:22:56.365987+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44361,7 +44379,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568447/security-engineer-aws-security",
     "description": "The AppSec Security Engineer evaluates service design and architecture and performs deep-dive security assessments to ensure applications and services meet a high security bar before launch. This role",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.196392+00:00",
+    "posted_at": "2026-10-11T03:22:56.366086+00:00",
     "tags": [
       "aws"
     ],
@@ -44381,7 +44399,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10378597/security-engineer-cs-security",
     "description": "Are you passionate about delivering innovative security solutions and protecting millions of customers through a blend of deep security expertise, hands-on coding, and building scalable security guardrails",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.196502+00:00",
+    "posted_at": "2026-10-11T03:22:56.366180+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44399,7 +44417,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10432868/security-engineer-leo-security",
     "description": "We are open to hiring candidates to work out of one of the following locations:Redmond, WA, USALeo is an initiative to launch a constellation of Low Earth Orbit satellites that will provide low-latency,",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.196622+00:00",
+    "posted_at": "2026-10-11T03:22:56.366279+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44417,7 +44435,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568037/security-engineer-ai-security",
     "description": "Join the team that helps protect the Amazon and our customers. The scale of Amazon and diversity of customers means your work would have far-reaching impacts across a broad range of industries around the",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.196737+00:00",
+    "posted_at": "2026-10-11T03:22:56.366379+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44435,7 +44453,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10567109/security-engineer-ii",
     "description": "Help us protect not only the Amazon Web Services (AWS) cloud computing environment but all of our customers as well!  Since 2006, our great team at AWS has been enabling our customers to bring great ideas",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.196854+00:00",
+    "posted_at": "2026-10-11T03:22:56.366477+00:00",
     "tags": [
       "aws"
     ],
@@ -44455,7 +44473,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10564381/security-engineer-cs-security",
     "description": "Are you passionate about delivering innovative security solutions and protecting millions of customers through a blend of deep security expertise, hands-on coding, and building scalable security guardrails",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.196967+00:00",
+    "posted_at": "2026-10-11T03:22:56.366588+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44473,7 +44491,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10551921/security-engineer-aws-security",
     "description": "Come and build innovative services that protect our cloud from security threats.As a Security Engineer (SecEng), you\u2019ll help to build and manage services that detect and automate the mitigation of cybersecurity",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.197080+00:00",
+    "posted_at": "2026-10-11T03:22:56.366690+00:00",
     "tags": [
       "aws"
     ],
@@ -44493,7 +44511,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10512090/security-engineer-ads-security",
     "description": "The ideal candidate will have a broad understanding of proactive security, have past experience leading security assessments, and have the ability to work with product and engineering teams in designing",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.197202+00:00",
+    "posted_at": "2026-10-11T03:22:56.366792+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44511,7 +44529,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10535198/security-engineer-aws-security",
     "description": "We're looking for a Security Engineer to join the team that secures the foundational Identity and crypto services powering AWS.You'll work directly with service teams across some of the most critical systems",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.197318+00:00",
+    "posted_at": "2026-10-11T03:22:56.366891+00:00",
     "tags": [
       "aws"
     ],
@@ -44531,7 +44549,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568040/security-engineer-ai-security",
     "description": "Join the team that helps protect the Amazon and our customers. The scale of Amazon and diversity of customers means your work would have far-reaching impacts across a broad range of industries around the",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.197430+00:00",
+    "posted_at": "2026-10-11T03:22:56.366991+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44549,7 +44567,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568036/security-engineer-ai-security",
     "description": "Join the team that helps protect the Amazon and our customers. The scale of Amazon and diversity of customers means your work would have far-reaching impacts across a broad range of industries around the",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.197544+00:00",
+    "posted_at": "2026-10-11T03:22:56.367092+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44567,7 +44585,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10535199/security-engineer-aws-security",
     "description": "We're looking for a Security Engineer to join the team that secures the foundational Identity and Crypto services powering AWS.You'll work directly with service teams across some of the most critical systems",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.197666+00:00",
+    "posted_at": "2026-10-11T03:22:56.367187+00:00",
     "tags": [
       "aws"
     ],
@@ -44587,7 +44605,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10535106/security-engineer-aws-security",
     "description": "Applicants must be Australian citizens and hold or be eligible to obtain an Australian Government Security Clearance, with the ability to successfully complete an Organisational Suitability Assessment.",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.197776+00:00",
+    "posted_at": "2026-10-11T03:22:56.367283+00:00",
     "tags": [
       "aws"
     ],
@@ -44607,7 +44625,7 @@
     "url": "https://www.amazon.jobs/en/jobs/3128132/security-engineer-aws-security",
     "description": "Applicants must be Australian citizens and hold or be eligible to obtain an Australian Government Security Clearance, with the ability to successfully complete an Organisational Suitability Assessment.",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.197894+00:00",
+    "posted_at": "2026-10-11T03:22:56.367376+00:00",
     "tags": [
       "aws"
     ],
@@ -44627,7 +44645,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568221/application-security-engineer",
     "description": "Help us protect not only the Amazon Web Services (AWS) cloud computing environment but all of our customers as well! Since 2006, our great team at AWS has been enabling our customers to bring great ideas",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.198000+00:00",
+    "posted_at": "2026-10-11T03:22:56.367469+00:00",
     "tags": [
       "aws"
     ],
@@ -44647,7 +44665,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10509690/mobile-security-engineer-application-security",
     "description": "Amazon\u2019s Stores Application Security Team is seeking a Mobile Security Engineer to help keep Amazon secure for its customers. In this role, you will attack Amazon\u2019s services, mobile applications to discover",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.198119+00:00",
+    "posted_at": "2026-10-11T03:22:56.367606+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44665,7 +44683,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10573366/application-security-engineer",
     "description": "Help us protect not only the Amazon Web Services (AWS) cloud computing environment but all of our customers as well! Since 2006, our great team at AWS has been enabling our customers to bring great ideas",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.198245+00:00",
+    "posted_at": "2026-10-11T03:22:56.367717+00:00",
     "tags": [
       "aws"
     ],
@@ -44685,7 +44703,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10568241/application-security-engineer",
     "description": "Help us protect not only the Amazon Web Services (AWS) cloud computing environment but all of our customers as well! Since 2006, our great team at AWS has been enabling our customers to bring great ideas",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.198354+00:00",
+    "posted_at": "2026-10-11T03:22:56.367813+00:00",
     "tags": [
       "aws"
     ],
@@ -44705,7 +44723,7 @@
     "url": "https://www.amazon.jobs/en/jobs/3205651/security-engineer-stores-application-security",
     "description": "In Amazon Stores, we ship some of the widest arrays of technology found at any company. From amazon.com to world class machine learning pipelines, from Innovative digital healthcare to no-checkout retail,",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.198467+00:00",
+    "posted_at": "2026-10-11T03:22:56.367910+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44723,7 +44741,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10521207/security-engineer-aws-appsec",
     "description": "AWS Security is looking for an Application Security Engineer to help validate that our services, applications, and websites are designed and implemented to the highest security standards. You will be responsible",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.198608+00:00",
+    "posted_at": "2026-10-11T03:22:56.368018+00:00",
     "tags": [
       "aws"
     ],
@@ -44743,7 +44761,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10504090/security-engineer-iii-amz9971078",
     "description": "MULTIPLE POSITIONS AVAILABLEEmployer: AMAZON DEVELOPMENT CENTER U.S., INC.Offered Position: Security Engineer IIIJob Location: New York, New YorkJob Number: AMZ9971078Position Responsibilities:Partner",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.198721+00:00",
+    "posted_at": "2026-10-11T03:22:56.368116+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44761,7 +44779,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10487669/security-engineer-ii-amz9802161",
     "description": "MULTIPLE POSITIONS AVAILABLEEmployer: AMAZON WEB SERVICES, INC.Offered Position: Security Engineer IIJob Location: Austin, TexasJob Number: AMZ9802161Position Responsibilities:Provide frontline support",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.198842+00:00",
+    "posted_at": "2026-10-11T03:22:56.368213+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
@@ -44779,7 +44797,7 @@
     "url": "https://www.amazon.jobs/en/jobs/10510072/security-engineer-corporate-services-security",
     "description": "The Corporate Services Security (CPSS) Finance and Communication Security (FCS) Team is responsible for securing the applications, infrastructure and data developed across Finance & Global Business Services",
     "ats": "amazon-enterprise",
-    "posted_at": "2026-10-10T21:00:05.198958+00:00",
+    "posted_at": "2026-10-11T03:22:56.368314+00:00",
     "tags": [],
     "specialization": "Cybersecurity & AppSec",
     "experience_level": "Mid-Level (3\u20135 yrs)",
